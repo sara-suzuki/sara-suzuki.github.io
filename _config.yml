@@ -39,14 +39,14 @@ repo_trophies:
 # will use title and url fields
 # Take a look to https://github.com/jekyll/jekyll-feed for more customization
 
-rss_icon: true
+rss_icon: false
 
 # -----------------------------------------------------------------------------
 # Layout
 # -----------------------------------------------------------------------------
 
 navbar_fixed: true
-footer_fixed: false
+footer_fixed: true
 
 # Dimensions
 max_width: 800px
@@ -118,7 +118,7 @@ bing_site_verification:  # out your bing-site-verification ID (Bing Webmaster)
 # -----------------------------------------------------------------------------
 
 blog_name:  # blog_name will be displayed in your blog page
-blog_nav_title: blog # your blog must have a title for it to be displayed in the nav bar
+blog_nav_title:  # your blog must have a title for it to be displayed in the nav bar
 blog_description: 
 permalink: /blog/:year/:title/
 
@@ -170,6 +170,11 @@ collections:
     output: true
     permalink: /projects/:path/
 
+  press:
+    output: true
+    permalink: /press/:path/
+    
+    
 announcements:
   enabled: false
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
@@ -293,6 +298,8 @@ scholar:
 
   query: "@*"
   group_by: year
+  sort_by: month
+  sort_order: descending
   group_order: descending
 
 # Display different badges withs stats for your publications
@@ -363,7 +370,7 @@ enable_masonry:             true   # enables automatic project cards arrangement
 enable_math:                true   # enables math typesetting (uses MathJax)
 enable_tooltips:            false  # enables automatic tooltip links generated
                                    # for each section titles on pages and posts
-enable_darkmode:            true   # enables switching between light/dark modes
+enable_darkmode:            false   # enables switching between light/dark modes
 enable_navbar_social:       false  # enables displaying social links in the
                                    # navbar on the about page
 enable_project_categories:  true   # enables categorization of projects into

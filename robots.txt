@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://sara-suzuki.github.io/al-folio/sitemap.xml
+Sitemap: https://sara-suzuki.github.io/sitemap.xml

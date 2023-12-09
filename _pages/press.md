@@ -2,7 +2,7 @@
 layout: page
 title: press
 permalink: /press/
-description: 
+description: A selection of press peices in which I had the opportunity to talk to the media about the important work that I did with Cambridge HEART as well as the research that I conduct with CIRCLE.
 nav: true
 nav_order: 4
 display_categories: ["climate", "running for office","elections", "media research", "gun violence","community safety"]

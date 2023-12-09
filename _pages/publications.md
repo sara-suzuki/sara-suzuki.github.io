@@ -2,7 +2,7 @@
 layout: page
 permalink: /publications/
 title: publications
-description: 
+description: A list of writing projects that I contributed to. Some are peer-reviewed articles while many are reports, posts, and white papers that were disseminated to practitioners, policymakers, and media.
 nav: true
 nav_order: 3
 ---

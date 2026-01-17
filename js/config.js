@@ -23,12 +23,12 @@ const CONFIG = {
   navigation: [
     { name: "About", href: "index.html", enabled: true },
     { name: "Values", href: "pillars.html", enabled: true },
-    { name: "CV", href: "cv.html", enabled: true },
+    { name: "CV", href: "cv.html", enabled: false },
     { name: "Speaking", href: "speaking.html", enabled: true },
     { name: "Projects", href: "projects.html", enabled: true },
     { name: "Publications", href: "publications.html", enabled: true },
     { name: "Press", href: "press.html", enabled: true },
-    { name: "LPA Toolkit", href: "toolkit.html", enabled: true },
+    { name: "LPA Toolkit", href: "toolkit.html", enabled: false },
   ],
 
   // ----- ABOUT PAGE -----

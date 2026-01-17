@@ -270,22 +270,107 @@ function renderProjectsPage() {
 
 /* ----- PUBLICATIONS PAGE ----- */
 function renderPublicationsPage() {
+  const filtersEl = document.getElementById('publication-filters');
+  const countEl = document.getElementById('publication-count');
   const list = document.getElementById('publications-list');
+  
   if (!list || !CONFIG.publications) return;
   
-  list.innerHTML = CONFIG.publications.map(pub => `
-    <article class="publication-item">
-      <div class="publication-year">${pub.year}</div>
-      <div class="publication-content">
-        <h3>${pub.link ? `<a href="${pub.link}">${pub.title}</a>` : pub.title}</h3>
-        <div class="publication-meta">
-          <span class="publication-type">${pub.type}</span>
-          <span class="publication-publisher">${pub.publisher}</span>
+  // Calculate counts per category
+  const counts = { all: CONFIG.publications.length };
+  CONFIG.publications.forEach(pub => {
+    const categoryId = pub.type.toLowerCase().replace(/\s+/g, '-');
+    counts[categoryId] = (counts[categoryId] || 0) + 1;
+  });
+  
+  // Render filter buttons
+  if (filtersEl && CONFIG.publicationCategories) {
+    filtersEl.innerHTML = CONFIG.publicationCategories.map(cat => {
+      const count = counts[cat.id] || 0;
+      // Only show categories that have publications (or "All")
+      if (cat.id === 'all' || count > 0) {
+        return `
+          <button class="filter-btn ${cat.id === 'all' ? 'active' : ''}" data-filter="${cat.id}">
+            ${cat.label}<span class="count">${count}</span>
+          </button>
+        `;
+      }
+      return '';
+    }).join('');
+    
+    // Add filter event listeners
+    filtersEl.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => handlePublicationFilter(btn.dataset.filter));
+    });
+  }
+  
+  // Render publications
+  list.innerHTML = CONFIG.publications.map(pub => {
+    const categoryId = pub.type.toLowerCase().replace(/\s+/g, '-');
+    return `
+      <article class="publication-item" data-category="${categoryId}">
+        <div class="publication-year">${pub.year}</div>
+        <div class="publication-content">
+          <h3>${pub.link ? `<a href="${pub.link}">${pub.title}</a>` : pub.title}</h3>
+          <div class="publication-meta">
+            <span class="publication-type">${pub.type}</span>
+            <span class="publication-publisher">${pub.publisher}</span>
+          </div>
+          <p class="publication-description">${pub.description}</p>
         </div>
-        <p class="publication-description">${pub.description}</p>
-      </div>
-    </article>
-  `).join('');
+      </article>
+    `;
+  }).join('');
+  
+  // Update count text
+  updatePublicationCount('all');
+}
+
+function handlePublicationFilter(filter) {
+  const filtersEl = document.getElementById('publication-filters');
+  const list = document.getElementById('publications-list');
+  
+  // Update active button
+  filtersEl.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.filter === filter);
+  });
+  
+  // Filter publications
+  const items = list.querySelectorAll('.publication-item');
+  let visibleCount = 0;
+  
+  items.forEach((item, index) => {
+    const category = item.dataset.category;
+    const shouldShow = filter === 'all' || category === filter;
+    
+    if (shouldShow) {
+      item.classList.remove('hidden');
+      item.classList.add('fade-in');
+      // Stagger animation
+      item.style.animationDelay = `${visibleCount * 0.05}s`;
+      visibleCount++;
+    } else {
+      item.classList.add('hidden');
+      item.classList.remove('fade-in');
+    }
+  });
+  
+  // Update count
+  updatePublicationCount(filter, visibleCount);
+}
+
+function updatePublicationCount(filter, count) {
+  const countEl = document.getElementById('publication-count');
+  if (!countEl) return;
+  
+  if (count === undefined) {
+    count = CONFIG.publications.length;
+  }
+  
+  const label = filter === 'all' ? 'all publications' : 
+    CONFIG.publicationCategories.find(c => c.id === filter)?.label.toLowerCase() + 's';
+  
+  countEl.textContent = `Showing ${count} ${count === 1 ? 'publication' : 'publications'}${filter !== 'all' ? ` in ${label}` : ''}`;
 }
 
 /* ----- PRESS PAGE ----- */

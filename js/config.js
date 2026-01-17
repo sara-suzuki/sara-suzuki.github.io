@@ -23,12 +23,12 @@ const CONFIG = {
   navigation: [
     { name: "About", href: "index.html", enabled: true },
     { name: "Values", href: "pillars.html", enabled: true },
-    { name: "CV", href: "cv.html", enabled: false },
+    { name: "CV", href: "cv.html", enabled: true },
     { name: "Speaking", href: "speaking.html", enabled: true },
     { name: "Projects", href: "projects.html", enabled: true },
     { name: "Publications", href: "publications.html", enabled: true },
     { name: "Press", href: "press.html", enabled: true },
-    { name: "LPA Toolkit", href: "toolkit.html", enabled: false },
+    { name: "LPA Toolkit", href: "toolkit.html", enabled: true },
   ],
 
   // ----- ABOUT PAGE -----
@@ -203,10 +203,19 @@ const CONFIG = {
   ],
 
   // ----- PUBLICATIONS PAGE -----
+  // Available categories: "Book Chapter", "Report", "Web Article", "Journal Article"
+  // You can add more categories - just use consistent naming
+  publicationCategories: [
+    { id: "all", label: "All" },
+    { id: "book-chapter", label: "Book Chapter" },
+    { id: "report", label: "Report" },
+    { id: "web-article", label: "Web Article" },
+    { id: "journal-article", label: "Journal Article" }
+  ],
   publications: [
     {
       title: "Building Power from the Ground Up: A Framework for Community Organizing",
-      type: "Book",
+      type: "Book Chapter",
       year: "2023",
       publisher: "Community Press",
       description: "A comprehensive guide to grassroots organizing strategies for the modern era.",
@@ -222,7 +231,7 @@ const CONFIG = {
     },
     {
       title: "The Leadership-Power-Action Model",
-      type: "White Paper",
+      type: "Report",
       year: "2021",
       publisher: "Self-published",
       description: "Introducing the LPA framework for building sustainable community power.",
@@ -234,6 +243,22 @@ const CONFIG = {
       year: "2020",
       publisher: "Movement Building Reader",
       description: "Strategies for creating alliances that bridge ideological and demographic divides.",
+      link: "#"
+    },
+    {
+      title: "Five Lessons from Grassroots Campaigns",
+      type: "Web Article",
+      year: "2022",
+      publisher: "Organizing Weekly",
+      description: "Key takeaways from successful community-led initiatives across the country.",
+      link: "#"
+    },
+    {
+      title: "Measuring Community Power: A Practitioner's Guide",
+      type: "Report",
+      year: "2023",
+      publisher: "Community Research Institute",
+      description: "Frameworks and metrics for evaluating organizing impact.",
       link: "#"
     }
   ],

@@ -118,7 +118,7 @@ const CONFIG = {
       id: "inclusive-excellence",
       title: "Leading Institutional Change for Inclusive Excellence",
       status: "Active",
-      coverImage: "images/projects/inclusive-excellence.jpg",
+      coverImage: "images/projects/inclusive-excellence.jpeg",
       shortDescription: "Chair of the DEIJ committee at Tufts University's Tisch College, leading institutional change initiatives.",
       fullDescription: [
         "My commitment to diversity, equity, inclusion, and justice (DEIJ) has been a cornerstone of my professional journey, beginning with my role as a founding member of a departmental Anti-Racist Task Force during my doctoral studies.",
@@ -136,7 +136,7 @@ const CONFIG = {
       id: "cambridge-heart",
       title: "Cambridge HEART: Community-Based Emergency Response",
       status: "Completed",
-      coverImage: "images/projects/cambridge-heart.jpg",
+      coverImage: "images/projects/cambridge-heart.jpeg",
       shortDescription: "Supporting the development of a community-based emergency response as a volunteer and board member.",
       fullDescription: [
         "As a volunteer and board member with Cambridge HEART (Holistic Emergency Alternative Response Team), I played multiple roles in supporting this grassroots nonprofit during its crucial startup phase. Working closely with abolitionist, radical Black Feminist organizers of The Black Response, I contributed to building an alternative community safety program in Cambridge, Massachusetts.",
@@ -179,7 +179,7 @@ const CONFIG = {
       id: "movement-building",
       title: "Strengthening and Measuring Movement-Building Infrastructure",
       status: "Active",
-      coverImage: "images/projects/movement-building.jpg",
+      coverImage: "images/projects/youth-voice.jpeg",
       shortDescription: "Research on organizational shifts for youth voice and movement-building infrastructure.",
       fullDescription: [
         "Youth voice and leadership are often celebrated but rarely centered in institutional decision-making. Through deep collaboration with long-standing institutions, I help build bridges between young people's lived experiences and institutional change.",
@@ -187,7 +187,7 @@ const CONFIG = {
         "The research examines how organizations can shift their practices to better support youth leadership and voice in meaningful ways."
       ],
       gallery: [
-        "images/projects/movement-building-1.jpg"
+        "images/projects/youth-voice-1.jpg"
       ],
       externalLink: "",
       relatedPublications: [

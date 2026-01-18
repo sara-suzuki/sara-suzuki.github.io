@@ -306,38 +306,67 @@ main {
 }
 
 .pillars-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
 }
 
 .pillar-card {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: var(--space-lg);
   background: var(--color-bg-card);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  padding: var(--space-lg);
+  overflow: hidden;
   transition: all var(--transition-base);
 }
 
 .pillar-card:hover {
   border-color: var(--color-primary-light);
   box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
 }
 
-.pillar-icon {
-  font-size: 2.5rem;
-  margin-bottom: var(--space-sm);
-  display: block;
+.pillar-image {
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+
+.pillar-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pillar-content {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .pillar-card h3 {
   color: var(--color-primary);
   margin-bottom: var(--space-sm);
+  font-size: 1.5rem;
 }
 
 .pillar-card p {
   color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+/* Alternate layout: image on right for odd cards */
+.pillar-card:nth-child(even) {
+  grid-template-columns: 1fr 300px;
+}
+
+.pillar-card:nth-child(even) .pillar-image {
+  order: 2;
+}
+
+.pillar-card:nth-child(even) .pillar-content {
+  order: 1;
 }
 
 /* ----- CV PAGE ----- */
@@ -1139,6 +1168,21 @@ main {
   .about-image {
     position: static;
     max-width: 240px;
+  }
+  
+  /* Pillar cards stack vertically on tablet/mobile */
+  .pillar-card,
+  .pillar-card:nth-child(even) {
+    grid-template-columns: 1fr;
+  }
+  
+  .pillar-card:nth-child(even) .pillar-image,
+  .pillar-card:nth-child(even) .pillar-content {
+    order: unset;
+  }
+  
+  .pillar-image {
+    aspect-ratio: 16/9;
   }
   
   .cv-item {

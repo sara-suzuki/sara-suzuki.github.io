@@ -150,7 +150,7 @@ function renderContactInfo() {
     email: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>',
     linkedin: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>',
     twitter: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>',
-    bluesky: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.5 7 3 11.5 3 14.5c0 2.5 2 4.5 4.5 4.5 1.5 0 2.8-.7 3.7-1.8.3-.4.8-.4 1.1 0 .9 1.1 2.2 1.8 3.7 1.8 2.5 0 4.5-2 4.5-4.5 0-3-3.5-7.5-9-12.5z"></path></svg>',
+    bluesky: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor"><path d="M407.8 294.7c-3.3-.4-6.7-.8-10-1.3c3.4.4 6.7.9 10 1.3zM288 227.1C261.9 176.4 190.9 81.9 124.9 35.3C61.6-9.4 37.5-1.7 21.6 5.5C3.3 13.8 0 41.9 0 58.4S9.1 194 15 213.9c19.5 65.7 89.1 87.9 153.2 80.7c3.3-.5 6.6-.9 10-1.4c-3.3.5-6.6 1-10 1.4C74.3 308.6-9.1 342.8 100.3 464c64.3 59.1 174.7-18.3 187.7-37.6c13 19.3 123.4 96.7 187.7 37.6c109.4-100.5 26-155.7-68.9-169.9c-3.3-.4-6.7-.8-10-1.3c3.3.4 6.7.9 10 1.3c64.1 7.1 133.6-15.1 153.2-80.7C566 194 576 75.3 576 58.4S572.7 13.8 554.4 5.5C538.5-1.7 514.4-9.4 451.1 35.3C385.1 81.9 314.1 176.4 288 227.1z"/></svg>',
     location: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>'
   };
   
@@ -192,9 +192,13 @@ function renderPillarsPage() {
   
   grid.innerHTML = CONFIG.pillars.map(pillar => `
     <div class="pillar-card">
-      <span class="pillar-icon">${pillar.icon}</span>
-      <h3>${pillar.title}</h3>
-      <p>${pillar.description}</p>
+      <div class="pillar-image">
+        <img src="${pillar.image}" alt="${pillar.title}">
+      </div>
+      <div class="pillar-content">
+        <h3>${pillar.title}</h3>
+        <p>${pillar.description}</p>
+      </div>
     </div>
   `).join('');
 }

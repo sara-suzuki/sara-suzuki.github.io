@@ -45,27 +45,27 @@ const CONFIG = {
   pillars: [
     {
       title: "Build",
-      icon: "🔨",
+      image: "images/pillars/build.jpg",
       description: "\"Build\" isn't just about creating structures—it's about cultivating the connections and relationships that form the bedrock of lasting change. As a community organizer at heart, I understand that true impact comes from patiently weaving together networks of people, nurturing leadership in others, and fostering coalitions that amplify our collective strength. Building means knowing when to step forward and, just as importantly, when to step back."
     },
     {
       title: "Discomfort",
-      icon: "🔥",
+      image: "images/pillars/discomfort.jpg",
       description: "In my work, I've learned that transformative change often emerges from moments of tension. I actively lean into discomfort because I recognize it as an opportunity to break through constraints. When we feel unsettled, it often means we have to unlearn what is deep inside us. The status quo might feel comfortable, but it can also mean we are settling for a system steeped in inequity."
     },
     {
       title: "Rigor",
-      icon: "🔬",
+      image: "images/pillars/rigor.jpg",
       description: "\"Rigor\" means wielding tools with intention, expertise, and awareness. My approach combines mastery of diverse methodologies—from statistical modeling to facilitation techniques, from data visualization to narrative frameworks—with a critical understanding of how these tools have been historically deployed. True rigor isn't just about technical precision—it's about thoughtfully selecting and applying the right tools for each unique challenge."
     },
     {
       title: "Space",
-      icon: "🌿",
+      image: "images/pillars/space.jpg",
       description: "\"Space\" is about creating containers where possibilities can flourish. I cultivate environments that invite experimentation, amplify diverse voices, and nurture collective creation. Central to my understanding of space is the recognition that rest and healing are not luxuries—they are essential elements of transformative work. True co-creation requires room to breathe, to experiment, to fail, and to grow."
     },
     {
       title: "Root",
-      icon: "🌱",
+      image: "images/pillars/root.jpg",
       description: "\"Root\" embodies Angela Davis's powerful reminder that to be radical means to grasp things at the root. My work is driven by a commitment to uncover and shift the deeper structural foundations that shape our reality. Rather than addressing surface-level symptoms, I dig deeper to expose, understand, and ultimately transform root causes and systemic barriers."
     }
   ],

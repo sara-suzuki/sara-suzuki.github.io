@@ -12,9 +12,9 @@ const CONFIG = {
   // ----- CONTACT INFO -----
   contact: {
     email: "sara.suzuki@tufts.edu",
-    linkedin: "https://www.linkedin.com/in/sarasuzuki/",
+    linkedin: "https://www.linkedin.com/in/sarasuzuki/", 
     bluesky: "https://bsky.app/profile/sara-suzuki.com",
-    location: "Boston, MA",
+    location: "Somerville, MA",
   },
 
   // ----- NAVIGATION -----
@@ -37,7 +37,7 @@ const CONFIG = {
       "I currently work as a Senior Researcher at CIRCLE, a non-partisan research center that is part of the Tisch College of Civic Life at Tufts University. I received my Ph.D. in Applied Developmental and Educational Psychology from Boston College."
     ],
     // Profile image (place in /images/ folder)
-    image: "images/profile.jpg"
+    image: "images/profile.jpeg"
   },
 
   // ----- PILLARS/VALUES PAGE -----

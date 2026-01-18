@@ -23,12 +23,12 @@ const CONFIG = {
   navigation: [
     { name: "About", href: "index.html", enabled: true },
     { name: "Values", href: "pillars.html", enabled: true },
-    { name: "CV", href: "cv.html", enabled: true },
+    { name: "CV", href: "cv.html", enabled: false },
     { name: "Speaking", href: "speaking.html", enabled: true },
     { name: "Projects", href: "projects.html", enabled: true },
     { name: "Publications", href: "publications.html", enabled: true },
     { name: "Press", href: "press.html", enabled: true },
-    { name: "LPA Toolkit", href: "toolkit.html", enabled: true },
+    { name: "LPA Toolkit", href: "toolkit.html", enabled: false },
   ],
 
   // ----- ABOUT PAGE -----
@@ -171,40 +171,118 @@ const CONFIG = {
   },
 
   // ----- PROJECTS PAGE -----
+  // Each project has a card view and a detail page
+  // - id: unique identifier (used for URL: project-{id}.html)
+  // - coverImage: image shown on project card (place in images/projects/)
+  // - shortDescription: shown on the projects grid
+  // - fullDescription: array of paragraphs shown on detail page
+  // - gallery: array of images for the detail page
+  // - relatedPublications: array of publication titles (must match exactly)
+  // - relatedPress: array of press titles (must match exactly)
   projects: [
     {
+      id: "community-voices",
       title: "Community Voices Coalition",
       status: "Active",
-      description: "A multi-organization alliance focused on amplifying resident voices in local policy decisions. Currently active in 15 cities.",
-      link: "#",
-      linkText: "Learn More"
+      coverImage: "images/projects/community-voices.jpg",
+      shortDescription: "A multi-organization alliance focused on amplifying resident voices in local policy decisions.",
+      fullDescription: [
+        "The Community Voices Coalition brings together over 50 organizations across 15 cities to ensure that residents have a meaningful seat at the table when policy decisions are made that affect their communities.",
+        "Through coordinated advocacy, shared training resources, and joint campaigns, we've successfully influenced housing policy, environmental justice initiatives, and local budget priorities.",
+        "Our model emphasizes deep community engagement over token participation, ensuring that the people most affected by policies are leading the conversations about solutions."
+      ],
+      gallery: [
+        "images/projects/community-voices-1.jpg",
+        "images/projects/community-voices-2.jpg",
+        "images/projects/community-voices-3.jpg"
+      ],
+      externalLink: "https://example.com/community-voices",
+      relatedPublications: [
+        "Building Power from the Ground Up: A Framework for Community Organizing",
+        "Coalition Building Across Difference"
+      ],
+      relatedPress: [
+        "Local Organizer Wins National Recognition for Housing Work"
+      ]
     },
     {
+      id: "organizer-training",
       title: "Organizer Training Academy",
       status: "Active",
-      description: "A 12-week intensive program training the next generation of community leaders. Over 500 graduates since 2018.",
-      link: "#",
-      linkText: "View Program"
+      coverImage: "images/projects/training-academy.jpg",
+      shortDescription: "A 12-week intensive program training the next generation of community leaders.",
+      fullDescription: [
+        "The Organizer Training Academy is a comprehensive 12-week program designed to equip emerging leaders with the skills, frameworks, and networks they need to build power in their communities.",
+        "Since 2018, we've graduated over 500 organizers who are now leading campaigns across the country. Our curriculum covers everything from one-on-one relational meetings to large-scale campaign strategy.",
+        "The program combines in-person intensive sessions with ongoing mentorship and peer support, creating lasting connections among cohort members."
+      ],
+      gallery: [
+        "images/projects/training-1.jpg",
+        "images/projects/training-2.jpg"
+      ],
+      externalLink: "",
+      relatedPublications: [
+        "The Leadership-Power-Action Model",
+        "Relational Organizing in the Digital Age"
+      ],
+      relatedPress: [
+        "Interview: The Future of Grassroots Organizing"
+      ]
     },
     {
+      id: "housing-justice",
       title: "Housing Justice Campaign",
       status: "Completed",
-      description: "Successful campaign that resulted in tenant protection legislation in three municipalities.",
-      link: "#",
-      linkText: "Read Case Study"
+      coverImage: "images/projects/housing-justice.jpg",
+      shortDescription: "Successful campaign that resulted in tenant protection legislation in three municipalities.",
+      fullDescription: [
+        "The Housing Justice Campaign was a two-year effort to pass comprehensive tenant protection legislation in response to rising displacement and housing instability.",
+        "Through a combination of tenant organizing, coalition building, and strategic media engagement, we successfully passed legislation in three municipalities that included rent stabilization, just-cause eviction protections, and anti-harassment provisions.",
+        "The campaign demonstrated the power of centering directly affected community members in advocacy efforts, with tenant leaders serving as the primary spokespeople and decision-makers throughout."
+      ],
+      gallery: [
+        "images/projects/housing-1.jpg",
+        "images/projects/housing-2.jpg",
+        "images/projects/housing-3.jpg",
+        "images/projects/housing-4.jpg"
+      ],
+      externalLink: "",
+      relatedPublications: [
+        "Measuring Community Power: A Practitioner's Guide"
+      ],
+      relatedPress: [
+        "Local Organizer Wins National Recognition for Housing Work",
+        "Profile: Building Bridges in Divided Times"
+      ]
     },
     {
+      id: "digital-toolkit",
       title: "Digital Organizing Toolkit",
       status: "Active",
-      description: "Open-source resources for organizations adapting to hybrid and remote organizing strategies.",
-      link: "#",
-      linkText: "Access Toolkit"
+      coverImage: "images/projects/digital-toolkit.jpg",
+      shortDescription: "Open-source resources for organizations adapting to hybrid and remote organizing strategies.",
+      fullDescription: [
+        "The Digital Organizing Toolkit is a free, open-source collection of resources designed to help community organizations adapt their strategies for hybrid and remote contexts.",
+        "Developed in response to the challenges organizations faced during the pandemic, the toolkit includes guides for virtual one-on-ones, online meeting facilitation, digital campaign strategies, and maintaining relational culture in remote settings.",
+        "The toolkit is continuously updated based on feedback from practitioners and emerging best practices in the field."
+      ],
+      gallery: [
+        "images/projects/digital-1.jpg"
+      ],
+      externalLink: "https://example.com/digital-toolkit",
+      relatedPublications: [
+        "Relational Organizing in the Digital Age",
+        "Five Lessons from Grassroots Campaigns"
+      ],
+      relatedPress: []
     }
   ],
 
   // ----- PUBLICATIONS PAGE -----
   // Available categories: "Book Chapter", "Report", "Web Article", "Journal Article"
-  // You can add more categories - just use consistent naming
+  // - link: URL to external publication (journal website, publisher, etc.)
+  // - downloadFile: path to downloadable PDF/Word file (place in files/publications/)
+  // Either or both can be provided; leave empty string "" if not available
   publicationCategories: [
     { id: "all", label: "All" },
     { id: "book-chapter", label: "Book Chapter" },
@@ -214,84 +292,101 @@ const CONFIG = {
   ],
   publications: [
     {
+      id: "building-power",
       title: "Building Power from the Ground Up: A Framework for Community Organizing",
       type: "Book Chapter",
       year: "2023",
       publisher: "Community Press",
       description: "A comprehensive guide to grassroots organizing strategies for the modern era.",
-      link: "#"
+      link: "https://example.com/building-power",
+      downloadFile: "files/publications/building-power.pdf"
     },
     {
+      id: "relational-organizing",
       title: "Relational Organizing in the Digital Age",
       type: "Journal Article",
       year: "2022",
       publisher: "Journal of Community Practice",
       description: "Examining how technology can enhance rather than replace relationship-based organizing.",
-      link: "#"
+      link: "https://example.com/relational-organizing",
+      downloadFile: "files/publications/relational-organizing.pdf"
     },
     {
+      id: "lpa-model",
       title: "The Leadership-Power-Action Model",
       type: "Report",
       year: "2021",
       publisher: "Self-published",
       description: "Introducing the LPA framework for building sustainable community power.",
-      link: "#"
+      link: "",
+      downloadFile: "files/publications/lpa-model.pdf"
     },
     {
+      id: "coalition-building",
       title: "Coalition Building Across Difference",
       type: "Book Chapter",
       year: "2020",
       publisher: "Movement Building Reader",
       description: "Strategies for creating alliances that bridge ideological and demographic divides.",
-      link: "#"
+      link: "https://example.com/coalition-building",
+      downloadFile: ""
     },
     {
+      id: "five-lessons",
       title: "Five Lessons from Grassroots Campaigns",
       type: "Web Article",
       year: "2022",
       publisher: "Organizing Weekly",
       description: "Key takeaways from successful community-led initiatives across the country.",
-      link: "#"
+      link: "https://example.com/five-lessons",
+      downloadFile: ""
     },
     {
+      id: "measuring-power",
       title: "Measuring Community Power: A Practitioner's Guide",
       type: "Report",
       year: "2023",
       publisher: "Community Research Institute",
       description: "Frameworks and metrics for evaluating organizing impact.",
-      link: "#"
+      link: "https://example.com/measuring-power",
+      downloadFile: "files/publications/measuring-power.pdf"
     }
   ],
 
   // ----- PRESS PAGE -----
+  // id: unique identifier for linking from project pages
   press: [
     {
+      id: "housing-recognition",
       outlet: "The Community Times",
       title: "Local Organizer Wins National Recognition for Housing Work",
       date: "January 2024",
       type: "Feature",
-      link: "#"
+      link: "https://example.com/press/housing-recognition"
     },
     {
+      id: "future-organizing",
       outlet: "NPR Local",
       title: "Interview: The Future of Grassroots Organizing",
       date: "October 2023",
       type: "Radio Interview",
-      link: "#"
+      link: "https://example.com/press/future-organizing"
     },
     {
+      id: "building-bridges",
       outlet: "Organizing Magazine",
       title: "Profile: Building Bridges in Divided Times",
       date: "July 2023",
       type: "Profile",
-      link: "#"
+      link: "https://example.com/press/building-bridges"
     },
     {
+      id: "local-organizing",
       outlet: "Policy Watch",
       title: "Commentary: Why Local Organizing Matters More Than Ever",
       date: "March 2023",
       type: "Op-Ed",
-      link: "#"
+      link: "https://example.com/press/local-organizing"
     }
   ],
 

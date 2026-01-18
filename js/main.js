@@ -102,6 +102,9 @@ function renderDynamicContent() {
     case 'projects':
       renderProjectsPage();
       break;
+    case 'project-detail':
+      renderProjectDetailPage();
+      break;
     case 'publications':
       renderPublicationsPage();
       break;
@@ -257,15 +260,153 @@ function renderProjectsPage() {
   if (!grid || !CONFIG.projects) return;
   
   grid.innerHTML = CONFIG.projects.map(project => `
-    <div class="project-card">
-      <div class="project-header">
-        <h3>${project.title}</h3>
-        <span class="project-status ${project.status.toLowerCase()}">${project.status}</span>
-      </div>
-      <p>${project.description}</p>
-      ${project.link ? `<a href="${project.link}" class="project-link">${project.linkText || 'Learn More'}</a>` : ''}
-    </div>
+    <a href="project-${project.id}.html" class="project-card-link">
+      <article class="project-card">
+        <div class="project-cover">
+          ${project.coverImage 
+            ? `<img src="${project.coverImage}" alt="${project.title}">`
+            : `<div class="project-cover-placeholder">Project Image</div>`
+          }
+        </div>
+        <div class="project-card-content">
+          <div class="project-header">
+            <h3>${project.title}</h3>
+            <span class="project-status ${project.status.toLowerCase()}">${project.status}</span>
+          </div>
+          <p>${project.shortDescription}</p>
+          <span class="project-link-text">View Project →</span>
+        </div>
+      </article>
+    </a>
   `).join('');
+}
+
+/* ----- PROJECT DETAIL PAGE ----- */
+function renderProjectDetailPage() {
+  // Get project ID from URL
+  const path = window.location.pathname;
+  const filename = path.split('/').pop();
+  const match = filename.match(/^project-(.+)\.html$/);
+  
+  if (!match || !CONFIG.projects) return;
+  
+  const projectId = match[1];
+  const project = CONFIG.projects.find(p => p.id === projectId);
+  
+  if (!project) {
+    document.getElementById('project-content').innerHTML = '<p>Project not found.</p>';
+    return;
+  }
+  
+  // Update page title
+  document.title = `${project.title} | ${CONFIG.name}`;
+  
+  // Render project header
+  const headerEl = document.getElementById('project-header');
+  if (headerEl) {
+    headerEl.innerHTML = `
+      <div class="project-detail-header">
+        <div>
+          <h1>${project.title}</h1>
+          <span class="project-status ${project.status.toLowerCase()}">${project.status}</span>
+        </div>
+        ${project.externalLink ? `
+          <a href="${project.externalLink}" class="btn btn-primary" target="_blank" rel="noopener">
+            <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+            Visit Project
+          </a>
+        ` : ''}
+      </div>
+    `;
+  }
+  
+  // Render gallery
+  const galleryEl = document.getElementById('project-gallery');
+  if (galleryEl && project.gallery && project.gallery.length > 0) {
+    galleryEl.innerHTML = `
+      <div class="project-gallery">
+        ${project.gallery.map((img, index) => `
+          <div class="gallery-item ${index === 0 ? 'gallery-item-large' : ''}">
+            <img src="${img}" alt="${project.title} - Image ${index + 1}">
+          </div>
+        `).join('')}
+      </div>
+    `;
+  } else if (galleryEl) {
+    galleryEl.innerHTML = `
+      <div class="project-gallery">
+        <div class="gallery-item gallery-item-large">
+          <div class="gallery-placeholder">Project images will appear here</div>
+        </div>
+      </div>
+    `;
+  }
+  
+  // Render description
+  const descEl = document.getElementById('project-description');
+  if (descEl && project.fullDescription) {
+    descEl.innerHTML = project.fullDescription.map(p => `<p>${p}</p>`).join('');
+  }
+  
+  // Render related publications
+  const pubsEl = document.getElementById('project-publications');
+  if (pubsEl && project.relatedPublications && project.relatedPublications.length > 0) {
+    const relatedPubs = project.relatedPublications
+      .map(title => CONFIG.publications.find(p => p.title === title))
+      .filter(Boolean);
+    
+    if (relatedPubs.length > 0) {
+      pubsEl.innerHTML = `
+        <h2>Related Publications</h2>
+        <ul class="related-list">
+          ${relatedPubs.map(pub => `
+            <li>
+              <a href="publications.html#pub-${pub.id}">
+                <span class="related-title">${pub.title}</span>
+                <span class="related-meta">${pub.type} · ${pub.year}</span>
+              </a>
+            </li>
+          `).join('')}
+        </ul>
+      `;
+    } else {
+      pubsEl.innerHTML = '';
+    }
+  } else if (pubsEl) {
+    pubsEl.innerHTML = '';
+  }
+  
+  // Render related press
+  const pressEl = document.getElementById('project-press');
+  if (pressEl && project.relatedPress && project.relatedPress.length > 0) {
+    const relatedPress = project.relatedPress
+      .map(title => CONFIG.press.find(p => p.title === title))
+      .filter(Boolean);
+    
+    if (relatedPress.length > 0) {
+      pressEl.innerHTML = `
+        <h2>Press Coverage</h2>
+        <ul class="related-list">
+          ${relatedPress.map(item => `
+            <li>
+              <a href="press.html#press-${item.id}">
+                <span class="related-title">${item.title}</span>
+                <span class="related-meta">${item.outlet} · ${item.date}</span>
+              </a>
+            </li>
+          `).join('')}
+        </ul>
+      `;
+    } else {
+      pressEl.innerHTML = '';
+    }
+  } else if (pressEl) {
+    pressEl.innerHTML = '';
+  }
 }
 
 /* ----- PUBLICATIONS PAGE ----- */
@@ -275,6 +416,18 @@ function renderPublicationsPage() {
   const list = document.getElementById('publications-list');
   
   if (!list || !CONFIG.publications) return;
+  
+  // Handle hash navigation (for links from project pages)
+  if (window.location.hash) {
+    setTimeout(() => {
+      const targetEl = document.querySelector(window.location.hash);
+      if (targetEl) {
+        targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        targetEl.classList.add('highlight');
+        setTimeout(() => targetEl.classList.remove('highlight'), 2000);
+      }
+    }, 100);
+  }
   
   // Calculate counts per category
   const counts = { all: CONFIG.publications.length };
@@ -307,16 +460,43 @@ function renderPublicationsPage() {
   // Render publications
   list.innerHTML = CONFIG.publications.map(pub => {
     const categoryId = pub.type.toLowerCase().replace(/\s+/g, '-');
+    const hasLink = pub.link && pub.link.trim() !== '';
+    const hasDownload = pub.downloadFile && pub.downloadFile.trim() !== '';
+    
     return `
-      <article class="publication-item" data-category="${categoryId}">
+      <article class="publication-item" id="pub-${pub.id}" data-category="${categoryId}">
         <div class="publication-year">${pub.year}</div>
         <div class="publication-content">
-          <h3>${pub.link ? `<a href="${pub.link}">${pub.title}</a>` : pub.title}</h3>
+          <h3>${pub.title}</h3>
           <div class="publication-meta">
             <span class="publication-type">${pub.type}</span>
             <span class="publication-publisher">${pub.publisher}</span>
           </div>
           <p class="publication-description">${pub.description}</p>
+          ${(hasLink || hasDownload) ? `
+            <div class="publication-actions">
+              ${hasLink ? `
+                <a href="${pub.link}" class="btn-small btn-small-primary" target="_blank" rel="noopener">
+                  <svg class="btn-small-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                  View
+                </a>
+              ` : ''}
+              ${hasDownload ? `
+                <a href="${pub.downloadFile}" class="btn-small btn-small-secondary" download>
+                  <svg class="btn-small-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                  </svg>
+                  Download
+                </a>
+              ` : ''}
+            </div>
+          ` : ''}
         </div>
       </article>
     `;
@@ -378,11 +558,23 @@ function renderPressPage() {
   const list = document.getElementById('press-list');
   if (!list || !CONFIG.press) return;
   
+  // Handle hash navigation (for links from project pages)
+  if (window.location.hash) {
+    setTimeout(() => {
+      const targetEl = document.querySelector(window.location.hash);
+      if (targetEl) {
+        targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        targetEl.classList.add('highlight');
+        setTimeout(() => targetEl.classList.remove('highlight'), 2000);
+      }
+    }, 100);
+  }
+  
   list.innerHTML = CONFIG.press.map(item => `
-    <article class="press-item">
+    <article class="press-item" id="press-${item.id}">
       <div>
         <div class="press-outlet">${item.outlet}</div>
-        <div class="press-title">${item.link ? `<a href="${item.link}">${item.title}</a>` : item.title}</div>
+        <div class="press-title">${item.link ? `<a href="${item.link}" target="_blank" rel="noopener">${item.title}</a>` : item.title}</div>
       </div>
       <div class="press-meta">
         <span class="press-type">${item.type}</span>

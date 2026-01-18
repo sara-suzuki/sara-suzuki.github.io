@@ -535,11 +535,6 @@ main {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform var(--transition-base);
-}
-
-.project-card:hover .project-cover img {
-  transform: scale(1.03);
 }
 
 .project-cover-placeholder {
@@ -654,11 +649,6 @@ main {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform var(--transition-base);
-}
-
-.gallery-item:hover img {
-  transform: scale(1.02);
 }
 
 .gallery-placeholder {
@@ -1277,4 +1267,112 @@ main {
     background: white;
     color: black;
   }
+}
+
+
+/* =====================================================
+   IMAGE GRAYSCALE FILTER
+   
+   Professional grayscale with warm sepia tint.
+   Headshot/profile photo stays in full color.
+   NO hover reveal - images stay grayscale.
+   ===================================================== */
+
+/* ----- BASE IMAGE FILTER ----- */
+/* All images get grayscale with a warm sepia tint */
+img {
+  filter: grayscale(100%) sepia(15%) contrast(1.05);
+}
+
+/* ----- EXCLUDE HEADSHOT/PROFILE PHOTO ----- */
+/* These selectors ensure your profile photo stays in full color */
+
+/* By class name */
+.profile-photo,
+.profile-image,
+.headshot,
+.about-photo,
+.bio-photo,
+.hero-photo {
+  filter: none !important;
+}
+
+/* By parent container - About page profile section */
+.about-image img,
+.about-photo img,
+.profile-section img,
+.bio-section img,
+.hero-content img,
+.intro-section img {
+  filter: none !important;
+}
+
+/* By alt text (catches images with these words in alt) */
+img[alt*="profile" i],
+img[alt*="headshot" i],
+img[alt*="Sara" i],
+img[alt*="Suzuki" i],
+img[alt*="portrait" i],
+img[alt*="photo of me" i] {
+  filter: none !important;
+}
+
+/* By src path (if your headshot is in a specific location) */
+img[src*="profile"],
+img[src*="headshot"],
+img[src*="portrait"],
+img[src*="sara"],
+img[src*="about"] {
+  filter: none !important;
+}
+
+/* ----- PROJECT IMAGES ----- */
+.project-card img,
+.project-cover img,
+.project-image img,
+.project-thumbnail img {
+  filter: grayscale(100%) sepia(15%) contrast(1.05);
+}
+
+/* ----- PROJECT GALLERY (Detail Pages) ----- */
+.project-gallery img,
+.gallery-grid img,
+.image-gallery img,
+.gallery-item img {
+  filter: grayscale(100%) sepia(15%) contrast(1.05);
+  border-radius: var(--radius-md, 8px);
+}
+
+/* ----- PRESS & MEDIA LOGOS ----- */
+.press-item img,
+.press-logo,
+.media-logo,
+.logo-grid img {
+  filter: grayscale(100%) opacity(0.75);
+}
+
+/* ----- SPEAKING & ENGAGEMENT IMAGES ----- */
+.engagement-image img,
+.speaking-image img,
+.event-image img {
+  filter: grayscale(100%) sepia(15%) contrast(1.05);
+}
+
+/* ----- PUBLICATION THUMBNAILS ----- */
+.publication-item img,
+.pub-thumbnail img {
+  filter: grayscale(100%) sepia(15%) contrast(1.05);
+}
+
+/* ----- UTILITY CLASSES ----- */
+/* Force an image to stay colorful */
+.no-filter,
+.color-image,
+.keep-color {
+  filter: none !important;
+}
+
+/* Force grayscale (redundant now but useful for specificity) */
+.always-grayscale {
+  filter: grayscale(100%) sepia(15%) contrast(1.05) !important;
 }

@@ -5,413 +5,669 @@
 
 const CONFIG = {
   // ----- PERSONAL INFO -----
-  name: "Your Name",
-  title: "Community Organizer & Advocate",
-  tagline: "Building bridges, fostering connections, creating change.",
+  name: "Sara Suzuki",
+  title: "Ph.D. (she/her/hers)",
+  tagline: "I strive to build a more just democracy through co-creating knowledge and power with young people.",
   
   // ----- CONTACT INFO -----
   contact: {
-    email: "hello@example.com",
-    linkedin: "https://linkedin.com/in/yourprofile",
-    twitter: "https://twitter.com/yourhandle",
-    location: "City, State/Country",
-    // Add or remove contact methods as needed
+    email: "sara.suzuki@tufts.edu",
+    linkedin: "https://www.linkedin.com/in/sarasuzuki/",
+    bluesky: "https://bsky.app/profile/sara-suzuki.com",
+    location: "Boston, MA",
   },
 
   // ----- NAVIGATION -----
   // Set enabled: false to hide a page from navigation
   navigation: [
     { name: "About", href: "index.html", enabled: true },
-    { name: "Values", href: "pillars.html", enabled: true },
-    { name: "CV", href: "cv.html", enabled: false },
-    { name: "Speaking", href: "speaking.html", enabled: true },
+    { name: "Pillars", href: "pillars.html", enabled: true },
     { name: "Projects", href: "projects.html", enabled: true },
     { name: "Publications", href: "publications.html", enabled: true },
+    { name: "Speaking", href: "speaking.html", enabled: true },
     { name: "Press", href: "press.html", enabled: true },
-    { name: "LPA Toolkit", href: "toolkit.html", enabled: false },
   ],
 
   // ----- ABOUT PAGE -----
   about: {
-    intro: "I'm a community organizer passionate about grassroots movements and building authentic connections that drive meaningful change.",
+    intro: "Hello there! Thank you for visiting my personal website. I am interested in opportunities for collaboration and look forward to connecting with you.",
     bio: [
-      "With over a decade of experience in community organizing, I've dedicated my career to amplifying voices that often go unheard and creating spaces where everyone can contribute to collective action.",
-      "My work spans policy advocacy, coalition building, and developing practical tools that empower communities to organize effectively.",
-      "I believe in the power of relationships—that lasting change happens when we invest in genuine connections and work together toward shared goals."
+      "My research focuses on uncovering and disrupting inequities in youth civic engagement. I consider all forms of change-making, including voting, running for office, community organizing, and service. I look at the pathways that young people have to tackle the issues that they care about and investigate shifts—individual, organizational, institutional, and system-wide—that can bring greater inclusion to those pathways.",
+      "I believe that young people have the power to enact sociopolitical praxis (critical consciousness) to challenge systems of oppression and bring about social change. I strive to use my skills of quantitative, qualitative, and mixed methods research, facilitation, organizational capacity-building, and leadership development to learn from and with young people about how they are creating a more equitable future.",
+      "I currently work as a Senior Researcher at CIRCLE, a non-partisan research center that is part of the Tisch College of Civic Life at Tufts University. I received my Ph.D. in Applied Developmental and Educational Psychology from Boston College."
     ],
     // Profile image (place in /images/ folder)
     image: "images/profile.jpg"
   },
 
   // ----- PILLARS/VALUES PAGE -----
+  pillarsIntro: "The five pillars below represent the way I approach my work. They reflect my belief that transformation requires both structure and fluidity, technical rigor and deep empathy. These principles guide how I show up in service of collective liberation.",
   pillars: [
     {
-      title: "Community First",
-      icon: "🤝",
-      description: "Every decision starts with the community. We listen before we act, and we ensure that those most affected by issues have the loudest voice in shaping solutions."
+      title: "Build",
+      icon: "🔨",
+      description: "\"Build\" isn't just about creating structures—it's about cultivating the connections and relationships that form the bedrock of lasting change. As a community organizer at heart, I understand that true impact comes from patiently weaving together networks of people, nurturing leadership in others, and fostering coalitions that amplify our collective strength. Building means knowing when to step forward and, just as importantly, when to step back."
     },
     {
-      title: "Radical Inclusion",
-      icon: "🌍",
-      description: "Building movements that welcome everyone, particularly those historically marginalized. Diversity isn't just valued—it's essential."
+      title: "Discomfort",
+      icon: "🔥",
+      description: "In my work, I've learned that transformative change often emerges from moments of tension. I actively lean into discomfort because I recognize it as an opportunity to break through constraints. When we feel unsettled, it often means we have to unlearn what is deep inside us. The status quo might feel comfortable, but it can also mean we are settling for a system steeped in inequity."
     },
     {
-      title: "Relational Power",
-      icon: "💪",
-      description: "True power comes from authentic relationships. We invest in connections that transcend transactional interactions and build lasting solidarity."
+      title: "Rigor",
+      icon: "🔬",
+      description: "\"Rigor\" means wielding tools with intention, expertise, and awareness. My approach combines mastery of diverse methodologies—from statistical modeling to facilitation techniques, from data visualization to narrative frameworks—with a critical understanding of how these tools have been historically deployed. True rigor isn't just about technical precision—it's about thoughtfully selecting and applying the right tools for each unique challenge."
     },
     {
-      title: "Transparent Action",
-      icon: "🔍",
-      description: "We operate with openness and accountability. Our processes, decisions, and finances are accessible to all stakeholders."
+      title: "Space",
+      icon: "🌿",
+      description: "\"Space\" is about creating containers where possibilities can flourish. I cultivate environments that invite experimentation, amplify diverse voices, and nurture collective creation. Central to my understanding of space is the recognition that rest and healing are not luxuries—they are essential elements of transformative work. True co-creation requires room to breathe, to experiment, to fail, and to grow."
     },
     {
-      title: "Sustainable Change",
+      title: "Root",
       icon: "🌱",
-      description: "Quick wins matter, but we're building for the long haul. Our strategies prioritize lasting impact over temporary victories."
+      description: "\"Root\" embodies Angela Davis's powerful reminder that to be radical means to grasp things at the root. My work is driven by a commitment to uncover and shift the deeper structural foundations that shape our reality. Rather than addressing surface-level symptoms, I dig deeper to expose, understand, and ultimately transform root causes and systemic barriers."
     }
   ],
 
-  // ----- CV PAGE -----
-  cv: {
-    downloadFile: "files/cv.pdf",
-    summary: "A community organizer with expertise in coalition building, policy advocacy, and grassroots campaign development.",
-    sections: [
-      {
-        title: "Experience",
-        items: [
-          {
-            role: "Executive Director",
-            organization: "Community Action Network",
-            period: "2020 - Present",
-            description: "Leading a coalition of 50+ organizations focused on housing justice and economic equity."
-          },
-          {
-            role: "Senior Organizer",
-            organization: "Grassroots Leadership Initiative",
-            period: "2016 - 2020",
-            description: "Developed training programs for emerging community leaders across 12 states."
-          },
-          {
-            role: "Campaign Coordinator",
-            organization: "People's Voice Coalition",
-            period: "2012 - 2016",
-            description: "Coordinated voter engagement campaigns reaching 100,000+ community members."
-          }
-        ]
-      },
-      {
-        title: "Education",
-        items: [
-          {
-            role: "Master of Public Policy",
-            organization: "University Name",
-            period: "2012",
-            description: "Focus on community development and nonprofit management."
-          },
-          {
-            role: "Bachelor of Arts, Sociology",
-            organization: "University Name",
-            period: "2010",
-            description: "Minor in Political Science."
-          }
-        ]
-      }
-    ]
-  },
-
-  // ----- SPEAKING PAGE -----
-  speaking: {
-    intro: "I speak on topics related to community organizing, grassroots leadership, and building sustainable movements for change.",
-    topics: [
-      {
-        title: "Building Relational Power",
-        description: "How authentic relationships form the foundation of effective organizing and lasting change."
-      },
-      {
-        title: "From Grassroots to Policy",
-        description: "Strategies for translating community voice into legislative action."
-      },
-      {
-        title: "Inclusive Movement Building",
-        description: "Creating organizations and campaigns that center marginalized voices."
-      },
-      {
-        title: "The LPA Framework",
-        description: "Introduction to the Leadership, Power, and Action toolkit for community organizers."
-      }
-    ],
-    pastEngagements: [
-      {
-        event: "National Organizing Conference",
-        type: "Keynote",
-        date: "March 2024",
-        location: "Chicago, IL"
-      },
-      {
-        event: "Community Leadership Summit",
-        type: "Workshop",
-        date: "November 2023",
-        location: "Atlanta, GA"
-      },
-      {
-        event: "Grassroots Power Forum",
-        type: "Panel",
-        date: "June 2023",
-        location: "Virtual"
-      },
-      {
-        event: "State Policy Conference",
-        type: "Keynote",
-        date: "February 2023",
-        location: "Austin, TX"
-      }
-    ],
-    bookingNote: "Interested in having me speak at your event? Please reach out via email to discuss availability and topics."
-  },
-
   // ----- PROJECTS PAGE -----
-  // Each project has a card view and a detail page
-  // - id: unique identifier (used for URL: project-{id}.html)
-  // - coverImage: image shown on project card (place in images/projects/)
-  // - shortDescription: shown on the projects grid
-  // - fullDescription: array of paragraphs shown on detail page
-  // - gallery: array of images for the detail page
-  // - relatedPublications: array of publication titles (must match exactly)
-  // - relatedPress: array of press titles (must match exactly)
   projects: [
     {
-      id: "community-voices",
-      title: "Community Voices Coalition",
+      id: "critical-consciousness",
+      title: "Praxis: Critical Consciousness",
       status: "Active",
-      coverImage: "images/projects/community-voices.jpg",
-      shortDescription: "A multi-organization alliance focused on amplifying resident voices in local policy decisions.",
+      coverImage: "images/projects/critical-consciousness.jpg",
+      shortDescription: "Examining how young people analyze and resist systemic oppression through Freirean critical consciousness.",
       fullDescription: [
-        "The Community Voices Coalition brings together over 50 organizations across 15 cities to ensure that residents have a meaningful seat at the table when policy decisions are made that affect their communities.",
-        "Through coordinated advocacy, shared training resources, and joint campaigns, we've successfully influenced housing policy, environmental justice initiatives, and local budget priorities.",
-        "Our model emphasizes deep community engagement over token participation, ensuring that the people most affected by policies are leading the conversations about solutions."
+        "My work sits at the intersection of critical consciousness, youth development, and social transformation. As both a researcher and practitioner, I approach critical consciousness through two complementary lenses: as a theoretical framework that guides my research practice, and as a focal point of my empirical investigations.",
+        "Drawing on Paulo Freire's concept of praxis, I reject the notion of a neutral, impartial researcher. Instead, I actively align my institutional practices within higher education with my theoretical commitments to equity and social justice.",
+        "My research examines how young people analyze, resist, and work to transform oppressive systems while strengthening their communities. A key aspect of this work involves challenging traditional dichotomies between actions considered to be \"within\" versus \"against\" existing systems."
       ],
       gallery: [
-        "images/projects/community-voices-1.jpg",
-        "images/projects/community-voices-2.jpg",
-        "images/projects/community-voices-3.jpg"
+        "images/projects/critical-consciousness-1.jpg"
       ],
-      externalLink: "https://example.com/community-voices",
+      externalLink: "https://sara-suzuki.com/critical-consciousness/",
       relatedPublications: [
-        "Building Power from the Ground Up: A Framework for Community Organizing",
-        "Coalition Building Across Difference"
+        "The role of parents' and adolescents' critical reflection in the development of white youths' commitments to dismantling oppression",
+        "Associations between hope and trajectories of critical consciousness among U.S. youth of color",
+        "Situating Critical Consciousness Within the Developmental System"
       ],
-      relatedPress: [
-        "Local Organizer Wins National Recognition for Housing Work"
-      ]
+      relatedPress: []
     },
     {
-      id: "organizer-training",
-      title: "Organizer Training Academy",
+      id: "quantcrit",
+      title: "QuantCrit: Equity and Statistical Methodology",
       status: "Active",
-      coverImage: "images/projects/training-academy.jpg",
-      shortDescription: "A 12-week intensive program training the next generation of community leaders.",
+      coverImage: "images/projects/quantcrit.jpg",
+      shortDescription: "Advancing the application of QuantCrit in developmental science with practical guidelines for researchers.",
       fullDescription: [
-        "The Organizer Training Academy is a comprehensive 12-week program designed to equip emerging leaders with the skills, frameworks, and networks they need to build power in their communities.",
-        "Since 2018, we've graduated over 500 organizers who are now leading campaigns across the country. Our curriculum covers everything from one-on-one relational meetings to large-scale campaign strategy.",
-        "The program combines in-person intensive sessions with ongoing mentorship and peer support, creating lasting connections among cohort members."
+        "My research focuses on advancing the application of QuantCrit in developmental science, working to bridge critical theoretical frameworks with rigorous quantitative methods. This work spans both methodological innovation and practical application, with the goal of making critical quantitative approaches more accessible to researchers studying youth development.",
+        "My work demonstrates how QuantCrit can enhance our understanding of youth development, particularly through advanced statistical methods like mixture modeling. In my dissertation research, I explored distinct patterns of critical consciousness among youth of color, revealing how different experiences of critical consciousness relate to positive youth development outcomes.",
+        "I am currently developing a comprehensive framework to guide researchers in applying QuantCrit principles to statistical analysis in developmental science. Drawing from design thinking principles, this work addresses common challenges researchers face, such as working with small sample sizes while maintaining methodological rigor and theoretical integrity."
       ],
       gallery: [
-        "images/projects/training-1.jpg",
-        "images/projects/training-2.jpg"
+        "images/projects/quantcrit-1.jpg"
       ],
-      externalLink: "",
+      externalLink: "https://sara-suzuki.com/quantcrit/",
       relatedPublications: [
-        "The Leadership-Power-Action Model",
-        "Relational Organizing in the Digital Age"
+        "Using QuantCrit to advance an anti-racist developmental science: Applications to mixture modeling"
       ],
-      relatedPress: [
-        "Interview: The Future of Grassroots Organizing"
-      ]
+      relatedPress: []
     },
     {
-      id: "housing-justice",
-      title: "Housing Justice Campaign",
+      id: "inclusive-excellence",
+      title: "Leading Institutional Change for Inclusive Excellence",
+      status: "Active",
+      coverImage: "images/projects/inclusive-excellence.jpg",
+      shortDescription: "Chair of the DEIJ committee at Tufts University's Tisch College, leading institutional change initiatives.",
+      fullDescription: [
+        "My commitment to diversity, equity, inclusion, and justice (DEIJ) has been a cornerstone of my professional journey, beginning with my role as a founding member of a departmental Anti-Racist Task Force during my doctoral studies.",
+        "At Tufts University's Tisch College of Civic Life, I serve as chair of the college-wide DEIJ committee, advocating for over 70 staff members through the framework of institutional inclusive excellence. A significant achievement has been securing and implementing a $70,000 training institute for managerial-level staff focused on leadership for inclusive excellence.",
+        "Under my leadership, the DEIJ Committee has undergone strategic expansion and restructuring through the recruitment and integration of eight new members, each bringing diverse perspectives and expertise to our work."
+      ],
+      gallery: [
+        "images/projects/inclusive-excellence-1.jpg"
+      ],
+      externalLink: "https://sara-suzuki.com/inclusive-excellence/",
+      relatedPublications: [],
+      relatedPress: []
+    },
+    {
+      id: "cambridge-heart",
+      title: "Cambridge HEART: Community-Based Emergency Response",
       status: "Completed",
-      coverImage: "images/projects/housing-justice.jpg",
-      shortDescription: "Successful campaign that resulted in tenant protection legislation in three municipalities.",
+      coverImage: "images/projects/cambridge-heart.jpg",
+      shortDescription: "Supporting the development of a community-based emergency response as a volunteer and board member.",
       fullDescription: [
-        "The Housing Justice Campaign was a two-year effort to pass comprehensive tenant protection legislation in response to rising displacement and housing instability.",
-        "Through a combination of tenant organizing, coalition building, and strategic media engagement, we successfully passed legislation in three municipalities that included rent stabilization, just-cause eviction protections, and anti-harassment provisions.",
-        "The campaign demonstrated the power of centering directly affected community members in advocacy efforts, with tenant leaders serving as the primary spokespeople and decision-makers throughout."
+        "As a volunteer and board member with Cambridge HEART (Holistic Emergency Alternative Response Team), I played multiple roles in supporting this grassroots nonprofit during its crucial startup phase. Working closely with abolitionist, radical Black Feminist organizers of The Black Response, I contributed to building an alternative community safety program in Cambridge, Massachusetts.",
+        "My responsibilities centered on resource generation and community engagement. I organized successful fundraising events that brought together community members, advocates, and supporters. I also engaged in local advocacy, including speaking to City Council members to build support for alternative approaches to community safety.",
+        "This experience deepened my understanding of nonprofit management through an anti-oppression lens, while developing practical skills in sustaining grassroots organizations. Most importantly, it taught me the value of humility and patience in movement work, and the importance of learning from those who have been doing this work for generations."
       ],
       gallery: [
-        "images/projects/housing-1.jpg",
-        "images/projects/housing-2.jpg",
-        "images/projects/housing-3.jpg",
-        "images/projects/housing-4.jpg"
+        "images/projects/cambridge-heart-1.jpg"
       ],
-      externalLink: "",
+      externalLink: "https://www.cambridge-heart.org",
       relatedPublications: [
-        "Measuring Community Power: A Practitioner's Guide"
+        "Making sense of the alternative highway"
       ],
       relatedPress: [
-        "Local Organizer Wins National Recognition for Housing Work",
-        "Profile: Building Bridges in Divided Times"
+        "Community Safety",
+        "Community Safety"
       ]
     },
     {
-      id: "digital-toolkit",
-      title: "Digital Organizing Toolkit",
+      id: "political-homes",
+      title: "Political Homes",
       status: "Active",
-      coverImage: "images/projects/digital-toolkit.jpg",
-      shortDescription: "Open-source resources for organizations adapting to hybrid and remote organizing strategies.",
+      coverImage: "images/projects/political-homes.jpg",
+      shortDescription: "Research on what helps youth vote through direct civic information and political homes.",
       fullDescription: [
-        "The Digital Organizing Toolkit is a free, open-source collection of resources designed to help community organizations adapt their strategies for hybrid and remote contexts.",
-        "Developed in response to the challenges organizations faced during the pandemic, the toolkit includes guides for virtual one-on-ones, online meeting facilitation, digital campaign strategies, and maintaining relational culture in remote settings.",
-        "The toolkit is continuously updated based on feedback from practitioners and emerging best practices in the field."
+        "This research project examines the concept of 'political homes'—the organizations, communities, and spaces where young people develop their civic identities and capacities for political engagement.",
+        "Through this work, we investigate how direct civic information and supportive community structures help young people navigate the voting process and engage in broader forms of civic participation.",
+        "The findings from this research inform practitioners and policymakers about effective strategies for supporting youth voter participation and civic engagement."
       ],
       gallery: [
-        "images/projects/digital-1.jpg"
+        "images/projects/political-homes-1.jpg"
       ],
-      externalLink: "https://example.com/digital-toolkit",
+      externalLink: "",
       relatedPublications: [
-        "Relational Organizing in the Digital Age",
-        "Five Lessons from Grassroots Campaigns"
+        "What helps youth vote? Direct civic information and political homes"
+      ],
+      relatedPress: []
+    },
+    {
+      id: "movement-building",
+      title: "Strengthening and Measuring Movement-Building Infrastructure",
+      status: "Active",
+      coverImage: "images/projects/movement-building.jpg",
+      shortDescription: "Research on organizational shifts for youth voice and movement-building infrastructure.",
+      fullDescription: [
+        "Youth voice and leadership are often celebrated but rarely centered in institutional decision-making. Through deep collaboration with long-standing institutions, I help build bridges between young people's lived experiences and institutional change.",
+        "This work creates pathways for authentic youth engagement that transform both youth and adults, fostering organizational cultures that genuinely value and integrate youth perspectives.",
+        "The research examines how organizations can shift their practices to better support youth leadership and voice in meaningful ways."
+      ],
+      gallery: [
+        "images/projects/movement-building-1.jpg"
+      ],
+      externalLink: "",
+      relatedPublications: [
+        "How effective youth-adult partnerships can grow voters"
       ],
       relatedPress: []
     }
   ],
 
   // ----- PUBLICATIONS PAGE -----
-  // Available categories: "Book Chapter", "Report", "Web Article", "Journal Article"
-  // - link: URL to external publication (journal website, publisher, etc.)
-  // - downloadFile: path to downloadable PDF/Word file (place in files/publications/)
-  // Either or both can be provided; leave empty string "" if not available
   publicationCategories: [
     { id: "all", label: "All" },
-    { id: "book-chapter", label: "Book Chapter" },
+    { id: "journal-article", label: "Journal Article" },
     { id: "report", label: "Report" },
-    { id: "web-article", label: "Web Article" },
-    { id: "journal-article", label: "Journal Article" }
+    { id: "book-chapter", label: "Book Chapter" },
+    { id: "web-article", label: "Web Article" }
   ],
   publications: [
+    // 2025
     {
-      id: "building-power",
-      title: "Building Power from the Ground Up: A Framework for Community Organizing",
-      type: "Book Chapter",
-      year: "2023",
-      publisher: "Community Press",
-      description: "A comprehensive guide to grassroots organizing strategies for the modern era.",
-      link: "https://example.com/building-power",
-      downloadFile: "files/publications/building-power.pdf"
+      id: "genz-democracy-2025",
+      title: "How does Gen Z really feel about democracy? Insights from three profiles of youth and democracy",
+      type: "Report",
+      year: "2025",
+      publisher: "CIRCLE",
+      authors: "Deborah Apau, Sara Suzuki, Alberto Medina, Ruby Belle Booth",
+      description: "Research examining Gen Z attitudes toward democracy through profile analysis.",
+      link: "https://circle.tufts.edu/report-genz-attitudes-democracy",
+      downloadFile: ""
     },
     {
-      id: "relational-organizing",
-      title: "Relational Organizing in the Digital Age",
+      id: "belonging-efficacy-2025",
+      title: "A sense of belonging and a positive school climate are key to building youth political efficacy",
+      type: "Web Article",
+      year: "2025",
+      publisher: "CIRCLE",
+      authors: "Kelly Siegel-Stechler, Noorya Hayat, Alberto Medina, Katie Hilton, Sara Suzuki",
+      description: "Research on the relationship between school climate and youth political efficacy.",
+      link: "https://circle.tufts.edu/latest-research/sense-belonging-and-positive-school-climate-are-key-building-youth-political",
+      downloadFile: ""
+    },
+    {
+      id: "discriminatory-experiences-2025",
+      title: "Discriminatory experiences, critical consciousness development, and well-being among emerging adults",
+      type: "Journal Article",
+      year: "2025",
+      publisher: "Developmental Psychology",
+      authors: "Elena Maker Castro, Sara Suzuki, Lindsay Till Hoyt, Laura Wray-Lake, Alison K. Cohen",
+      description: "Examining the relationship between discrimination, critical consciousness, and wellbeing during COVID-19.",
+      link: "https://doi.org/10.1037/dev0001917",
+      downloadFile: "files/publications/2025_dp.pdf"
+    },
+    {
+      id: "2024-poll-2025",
+      title: "Young people and the 2024 election: Struggling, disconnected, and dissatisfied",
+      type: "Web Article",
+      year: "2025",
+      publisher: "CIRCLE",
+      authors: "Alberto Medina, Kelly Siegel-Stechler, Sara Suzuki, Ruby Belle Booth, Katie Hilton",
+      description: "Poll findings on barriers, issues, and economy concerns among young voters in 2024.",
+      link: "https://circle.tufts.edu/latest-research/2024-poll-barriers-issues-economy",
+      downloadFile: ""
+    },
+    // 2024
+    {
+      id: "white-youth-2024",
+      title: "The role of parents' and adolescents' critical reflection in the development of white youths' commitments to dismantling oppression",
+      type: "Journal Article",
+      year: "2024",
+      publisher: "Journal of Research on Adolescence",
+      authors: "Sara Suzuki, Aixa Marchand, Sara K. Johnson",
+      description: "Research on how critical reflection develops anti-oppression commitments in white youth.",
+      link: "http://dx.doi.org/10.1111/jora.13054",
+      downloadFile: "files/publications/2024_jra.pdf"
+    },
+    {
+      id: "black-youth-2024",
+      title: "Black youth are invested in their communities but encounter barriers to voting",
+      type: "Web Article",
+      year: "2024",
+      publisher: "CIRCLE",
+      authors: "Sam Searles, Sara Suzuki, Alberto Medina, Katie HIlton",
+      description: "Research on Black youth civic investment and voting barriers.",
+      link: "https://circle.tufts.edu/latest-research/black-youth-are-invested-their-communities-encounter-barriers-voting",
+      downloadFile: ""
+    },
+    {
+      id: "republican-youth-2024",
+      title: "Republican youth are numerous, politically active, and more moderate than older Republicans",
+      type: "Web Article",
+      year: "2024",
+      publisher: "CIRCLE",
+      authors: "Alberto Medina, CIRCLE Staff, Kei Kawashima-Ginsberg, Sara Suzuki",
+      description: "Analysis of Republican youth political engagement and attitudes.",
+      link: "https://circle.tufts.edu/latest-research/republican-youth-are-numerous-politically-active-and-more-moderate-older",
+      downloadFile: ""
+    },
+    {
+      id: "non-college-2024",
+      title: "Non-college youth need information and opportunities to engage in civic life",
+      type: "Web Article",
+      year: "2024",
+      publisher: "CIRCLE",
+      authors: "Seona Maskara, Sara Suzuki, Ruby Belle Booth, Peter de Guzman, Alberto Medina, Katie Hilton",
+      description: "Research on civic engagement barriers for non-college youth.",
+      link: "https://circle.tufts.edu/latest-research/non-college-youth-need-information-and-opportunities-engage-civic-life",
+      downloadFile: ""
+    },
+    {
+      id: "voice-vote-2024",
+      title: "Youth who develop their voice in high school are more likely to vote",
+      type: "Web Article",
+      year: "2024",
+      publisher: "CIRCLE",
+      authors: "Kelly Siegel-Stechler, Naraya Price, Alberto Medina, Abby Kiesa, Noorya Hayat, Sara Suzuki",
+      description: "Research connecting high school voice development to voting behavior.",
+      link: "https://circle.tufts.edu/latest-research/youth-who-develop-their-voice-high-school-are-more-likely-vote",
+      downloadFile: ""
+    },
+    // 2023
+    {
+      id: "hope-trajectories-2023",
+      title: "Associations between hope and trajectories of critical consciousness among U.S. youth of color",
+      type: "Journal Article",
+      year: "2023",
+      publisher: "Journal of Research on Adolescence",
+      authors: "Sara Suzuki, Sidney C. May, Scott Seider",
+      description: "Research on hope and critical consciousness development in youth of color.",
+      link: "https://doi.org/10.1111/jora.12872",
+      downloadFile: "files/publications/2023_jra.pdf"
+    },
+    {
+      id: "sociopolitical-stress-2023",
+      title: "Trajectories of sociopolitical stress during the 2020 United States presidential election season",
+      type: "Journal Article",
+      year: "2023",
+      publisher: "Comprehensive Psychoneuroendocrinology",
+      authors: "Sara Suzuki, Lindsay Till Hoyt, Neshat Yazdani, Mariah Kornbluh, Elan C. Hope, Melissa J. Hagan, Alison K. Cohen, Parissa J. Ballard",
+      description: "Examining sociopolitical stress trajectories and associations with wellbeing and civic action.",
+      link: "https://doi.org/10.1016/j.cpnec.2023.100218",
+      downloadFile: "files/publications/2023_cpnec.pdf"
+    },
+    {
+      id: "cc-handbook-2023",
+      title: "Situating Critical Consciousness Within the Developmental System",
+      type: "Book Chapter",
+      year: "2023",
+      publisher: "Critical Consciousness: Expanding Theory and Measurement",
+      authors: "Sara Suzuki, Sara K. Johnson, Kevin A. Ferreira van Leer",
+      description: "Insights from the Phenomenological Variant of Ecological Systems Theory.",
+      link: "",
+      downloadFile: "files/publications/2023_handbook.pdf"
+    },
+    {
+      id: "broadband-2023",
+      title: "Expanding broadband for equitable democracy",
+      type: "Report",
+      year: "2023",
+      publisher: "CIRCLE",
+      authors: "Sara Suzuki, Ruby Belle Booth, Abby Kiesa, Alberto Medina, Jimmeka Anderson",
+      description: "Research on broadband access and democratic participation.",
+      link: "https://circle.tufts.edu/broadband-equitable-democracy",
+      downloadFile: ""
+    },
+    {
+      id: "media-ecosystems-2023",
+      title: "Media ecosystems and youth voting",
+      type: "Report",
+      year: "2023",
+      publisher: "CIRCLE",
+      authors: "Sara Suzuki, Abby Kiesa, Alberto Medina",
+      description: "Research on how media environments shape youth voting behavior.",
+      link: "https://circle.tufts.edu/media-ecosystems",
+      downloadFile: ""
+    },
+    {
+      id: "political-homes-2023",
+      title: "What helps youth vote? Direct civic information and political homes",
+      type: "Report",
+      year: "2023",
+      publisher: "CIRCLE",
+      authors: "Sara Suzuki, Abby Kiesa, Alberto Medina, SJ McGeady",
+      description: "Research on factors that support youth voter participation.",
+      link: "https://circle.tufts.edu/latest-research/what-helps-youth-vote-direct-civic-information-and-political-homes",
+      downloadFile: ""
+    },
+    {
+      id: "yap-voters-2023",
+      title: "How effective youth-adult partnerships can grow voters",
+      type: "Web Article",
+      year: "2023",
+      publisher: "CIRCLE",
+      authors: "Ruby Belle Booth, Peter de Guzman, Sara Suzuki",
+      description: "Research on youth-adult partnerships and voter development.",
+      link: "https://circle.tufts.edu/latest-research/how-effective-youth-adult-partnerships-can-grow-voters",
+      downloadFile: ""
+    },
+    // 2022
+    {
+      id: "critical-action-2022",
+      title: "Critical action among Asian and Hispanic/Latinx youth: Identifying a multidimensional measure",
       type: "Journal Article",
       year: "2022",
-      publisher: "Journal of Community Practice",
-      description: "Examining how technology can enhance rather than replace relationship-based organizing.",
-      link: "https://example.com/relational-organizing",
-      downloadFile: "files/publications/relational-organizing.pdf"
+      publisher: "Journal of Community & Applied Social Psychology",
+      authors: "Sara Suzuki, Taina B. Quiles, Elena Maker Castro",
+      description: "Exploring within-group differences in critical action among diverse youth.",
+      link: "https://doi.org/10.1002/casp.2660",
+      downloadFile: "files/publications/2022_casp.pdf"
     },
     {
-      id: "lpa-model",
-      title: "The Leadership-Power-Action Model",
-      type: "Report",
-      year: "2021",
-      publisher: "Self-published",
-      description: "Introducing the LPA framework for building sustainable community power.",
-      link: "",
-      downloadFile: "files/publications/lpa-model.pdf"
-    },
-    {
-      id: "coalition-building",
-      title: "Coalition Building Across Difference",
-      type: "Book Chapter",
-      year: "2020",
-      publisher: "Movement Building Reader",
-      description: "Strategies for creating alliances that bridge ideological and demographic divides.",
-      link: "https://example.com/coalition-building",
-      downloadFile: ""
-    },
-    {
-      id: "five-lessons",
-      title: "Five Lessons from Grassroots Campaigns",
-      type: "Web Article",
+      id: "civic-assets-2022",
+      title: "Profiles of civic assets among youth of color: Relations with civic action",
+      type: "Journal Article",
       year: "2022",
-      publisher: "Organizing Weekly",
-      description: "Key takeaways from successful community-led initiatives across the country.",
-      link: "https://example.com/five-lessons",
+      publisher: "Journal of Applied Developmental Psychology",
+      authors: "Sara Suzuki, Stacy L. Morris, Sara K. Johnson",
+      description: "Research on civic asset profiles and their relationship to civic action.",
+      link: "https://doi.org/10.1016/j.appdev.2022.101476",
+      downloadFile: "files/publications/2022_jadp.pdf"
+    },
+    {
+      id: "running-office-2022",
+      title: "From interest to candidacy: Supporting young people on their path to running for office",
+      type: "Report",
+      year: "2022",
+      publisher: "CIRCLE",
+      authors: "Sara Suzuki, Kelly Siegel-Stechler, Peter de Guzman, Alberto Medina, Abby Kiesa, Maha Mapara, Kei Kawashima-Ginsberg",
+      description: "Research on pathways and support for young candidates.",
+      link: "https://circle.tufts.edu/latest-research/running-for-office",
       downloadFile: ""
     },
     {
-      id: "measuring-power",
-      title: "Measuring Community Power: A Practitioner's Guide",
+      id: "climate-activism-2022",
+      title: "Growing and diversifying youth climate activism",
       type: "Report",
-      year: "2023",
-      publisher: "Community Research Institute",
-      description: "Frameworks and metrics for evaluating organizing impact.",
-      link: "https://example.com/measuring-power",
-      downloadFile: "files/publications/measuring-power.pdf"
+      year: "2022",
+      publisher: "CIRCLE",
+      authors: "Sara Suzuki, LeeAnn Sangalang",
+      description: "Research on youth climate activism trends and diversification.",
+      link: "https://circle.tufts.edu/latest-research/growing-and-diversifying-youth-climate-activism",
+      downloadFile: ""
+    },
+    // 2021
+    {
+      id: "quantcrit-2021",
+      title: "Using QuantCrit to advance an anti-racist developmental science: Applications to mixture modeling",
+      type: "Journal Article",
+      year: "2021",
+      publisher: "Journal of Adolescent Research",
+      authors: "Sara Suzuki, Stacy L. Morris, Sara K. Johnson",
+      description: "Methodological paper on applying QuantCrit frameworks to statistical analysis.",
+      link: "https://doi.org/10.1177/07435584211028229",
+      downloadFile: "files/publications/2021_jar.pdf"
+    },
+    // Blog
+    {
+      id: "alternative-highway-2024",
+      title: "Making sense of the alternative highway",
+      type: "Web Article",
+      year: "2024",
+      publisher: "Aurora Commons",
+      authors: "Stephanie Guirand, Sara Suzuki",
+      description: "Reflections on community-based alternatives to traditional emergency response.",
+      link: "https://www.auroracommons.com/nc-content-fellows/alternative",
+      downloadFile: ""
     }
   ],
 
   // ----- PRESS PAGE -----
-  // id: unique identifier for linking from project pages
   press: [
     {
-      id: "housing-recognition",
-      outlet: "The Community Times",
-      title: "Local Organizer Wins National Recognition for Housing Work",
-      date: "January 2024",
+      id: "pittsburgh-post-gazette",
+      outlet: "Pittsburgh Post-Gazette",
+      title: "Republicans",
+      date: "February 2, 2025",
       type: "Feature",
-      link: "https://example.com/press/housing-recognition"
+      link: "https://sara-suzuki.com/2025/02/02/pittsburgh-post-gazette/"
     },
     {
-      id: "future-organizing",
-      outlet: "NPR Local",
-      title: "Interview: The Future of Grassroots Organizing",
-      date: "October 2023",
+      id: "wfyi",
+      outlet: "WFYI",
+      title: "Radio Interview on Sociopolitical Stress",
+      date: "October 24, 2024",
       type: "Radio Interview",
-      link: "https://example.com/press/future-organizing"
+      link: "https://sara-suzuki.com/2024/10/24/wfyi/"
     },
     {
-      id: "building-bridges",
-      outlet: "Organizing Magazine",
-      title: "Profile: Building Bridges in Divided Times",
-      date: "July 2023",
-      type: "Profile",
-      link: "https://example.com/press/building-bridges"
+      id: "ct-mirror",
+      outlet: "CT Mirror",
+      title: "Climate and Youth Engagement",
+      date: "October 13, 2024",
+      type: "Feature",
+      link: "https://sara-suzuki.com/2024/10/13/ct-mirror/"
     },
     {
-      id: "local-organizing",
-      outlet: "Policy Watch",
-      title: "Commentary: Why Local Organizing Matters More Than Ever",
-      date: "March 2023",
-      type: "Op-Ed",
-      link: "https://example.com/press/local-organizing"
+      id: "texas-tribune",
+      outlet: "The Texas Tribune",
+      title: "Running for Office",
+      date: "October 8, 2024",
+      type: "Feature",
+      link: "https://sara-suzuki.com/2024/10/08/the-texas-tribune/"
+    },
+    {
+      id: "michigan-public",
+      outlet: "Michigan Public",
+      title: "Elections",
+      date: "October 8, 2024",
+      type: "Radio Interview",
+      link: "https://sara-suzuki.com/2024/10/08/michigan-public/"
+    },
+    {
+      id: "sarasota-magazine",
+      outlet: "Sarasota Magazine",
+      title: "Youth Organizing",
+      date: "August 19, 2024",
+      type: "Feature",
+      link: "https://sara-suzuki.com/2024/08/19/sarasota-magazine/"
+    },
+    {
+      id: "pra-podcast",
+      outlet: "Creating Positive Social Change with PRA",
+      title: "Sociopolitical Stress",
+      date: "August 15, 2024",
+      type: "Podcast",
+      link: "https://sara-suzuki.com/2024/08/15/creating-positive-social-change-with-pra/"
+    },
+    {
+      id: "fast-company",
+      outlet: "Fast Company",
+      title: "Running for Office",
+      date: "July 24, 2024",
+      type: "Feature",
+      link: "https://sara-suzuki.com/2024/07/24/fast-company/"
+    },
+    {
+      id: "kera-think",
+      outlet: "KERA's Think",
+      title: "Elections",
+      date: "March 21, 2024",
+      type: "Radio Interview",
+      link: "https://sara-suzuki.com/2024/03/21/keras-think/"
+    },
+    {
+      id: "governing",
+      outlet: "Governing",
+      title: "Elections",
+      date: "February 5, 2024",
+      type: "Feature",
+      link: "https://sara-suzuki.com/2024/02/05/governing/"
+    },
+    {
+      id: "politico-2024",
+      outlet: "POLITICO",
+      title: "Climate",
+      date: "January 18, 2024",
+      type: "Feature",
+      link: "https://sara-suzuki.com/2024/01/18/politico/"
+    },
+    {
+      id: "usa-today",
+      outlet: "USA Today",
+      title: "Running for Office",
+      date: "November 15, 2023",
+      type: "Feature",
+      link: "https://sara-suzuki.com/2023/11/15/usa-today/"
+    },
+    {
+      id: "detroit-news",
+      outlet: "Detroit News",
+      title: "Running for Office",
+      date: "September 21, 2023",
+      type: "Feature",
+      link: "https://sara-suzuki.com/2023/09/21/detroit-news/"
+    },
+    {
+      id: "bbc-news",
+      outlet: "BBC News",
+      title: "Running for Office",
+      date: "October 6, 2022",
+      type: "Feature",
+      link: "https://sara-suzuki.com/2022/10/06/bbc-news/"
+    },
+    {
+      id: "wgbh",
+      outlet: "WGBH",
+      title: "Community Safety",
+      date: "February 23, 2022",
+      type: "Radio Interview",
+      link: "https://sara-suzuki.com/2022/02/23/wgbh/"
+    },
+    {
+      id: "harvard-crimson",
+      outlet: "The Harvard Crimson",
+      title: "Community Safety",
+      date: "January 27, 2022",
+      type: "Feature",
+      link: "https://sara-suzuki.com/2022/01/27/the-harvard-crimson/"
     }
   ],
 
-  // ----- TOOLKIT PAGE -----
-  toolkit: {
-    title: "LPA Toolkit",
-    subtitle: "Leadership • Power • Action",
-    description: "The LPA Toolkit is a comprehensive resource for community organizers, providing frameworks, templates, and guides for building effective grassroots movements.",
-    downloadFile: "files/lpa-toolkit.zip",
-    contents: [
-      "Leadership Development Curriculum (PDF)",
-      "Power Mapping Templates (Excel/Sheets)",
-      "Action Planning Worksheets",
-      "Meeting Facilitation Guides",
-      "Coalition Building Framework",
-      "Campaign Strategy Templates",
-      "Evaluation and Metrics Tools"
+  // ----- SPEAKING PAGE -----
+  speaking: {
+    intro: "As an experienced speaker and educator, I bring research-informed content and engaging real-world examples to discussions of youth development, civic engagement, and career pathways. My talks blend theoretical frameworks with practical lessons, leaving audiences with actionable insights.",
+    topics: [
+      {
+        title: "Strengthening the Youth Vote",
+        description: "Research-informed strategies for increasing youth voter participation and civic engagement."
+      },
+      {
+        title: "Youth Civic Engagement and Critical Consciousness",
+        description: "How young people develop awareness of systemic issues and take action for social change."
+      },
+      {
+        title: "Applying QuantCrit in Research",
+        description: "Practical guidance on integrating critical frameworks with quantitative methods."
+      },
+      {
+        title: "Post-PhD Careers Beyond Academia",
+        description: "Navigating career paths and opportunities outside traditional academic roles."
+      },
+      {
+        title: "Sociopolitical Development and Healing",
+        description: "The intersection of civic engagement, wellbeing, and collective healing."
+      },
+      {
+        title: "Positive Youth Development",
+        description: "Frameworks and practices for supporting young people's growth and empowerment."
+      }
     ],
-    license: "This toolkit is provided under a Creative Commons Attribution-NonCommercial license. Free for community use."
+    pastEngagements: [
+      {
+        event: "Convening on Affective Polarization Among Young People",
+        type: "Presentation",
+        date: "April 2025",
+        location: "Institute for Citizens & Scholars"
+      },
+      {
+        event: "Harvard Kennedy School Executive Session",
+        type: "Presentation",
+        date: "February 2025",
+        location: "Cambridge, MA"
+      },
+      {
+        event: "Made By Us Youth250 Bureau",
+        type: "Presentation",
+        date: "January 2025",
+        location: "Virtual"
+      },
+      {
+        event: "Allstate Young Leaders Learning Community",
+        type: "Workshop",
+        date: "September 2024",
+        location: "Virtual"
+      },
+      {
+        event: "IMMERSE Institute",
+        type: "Workshop",
+        date: "August 2024",
+        location: "UC Santa Barbara"
+      },
+      {
+        event: "Tufts University Community Symposium",
+        type: "Presentation",
+        date: "April 2024",
+        location: "Medford, MA"
+      },
+      {
+        event: "Boston College Guest Lecture",
+        type: "Guest Lecture",
+        date: "November 2023",
+        location: "Chestnut Hill, MA"
+      }
+    ],
+    bookingNote: "My experience includes guest lectures at both undergraduate and graduate levels, contributions to panels and conferences of professional organizations, as well as professional development workshops. I tailor each presentation to meet the specific needs and knowledge level of your audience. Honorariums are adjusted on a sliding scale to ensure accessibility for various organizations and institutions. To discuss speaking opportunities, please contact sara.suzuki@tufts.edu."
   },
 
   // ----- FOOTER -----
   footer: {
-    copyright: "© 2024 Your Name. All rights reserved.",
-    message: "Built with community in mind."
+    copyright: "© 2025 Sara Suzuki. All rights reserved.",
+    message: "Building a more just democracy through co-creating knowledge and power with young people."
   }
 };
 

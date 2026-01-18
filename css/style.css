@@ -5,33 +5,28 @@
 
 /* ----- CSS VARIABLES ----- */
 :root {
-  /* Color Palette */
-  --color-primary: #3c91e6;         /* Bright Ocean - main accent */
-  --color-primary-light: #5aa3eb;
-  --color-primary-dark: #2a7fd4;
+  /* Color Palette - Warm, earthy, community-focused */
+  --color-primary: #2D5A4A;      /* Deep forest green - trust, growth */
+  --color-primary-light: #3D7A64;
+  --color-primary-dark: #1D3A32;
   
-  --color-accent: #eec170;           /* Honey Bronze - warmth */
-  --color-accent-light: #f2d08a;
-  --color-accent-dark: #e0a94a;
+  --color-accent: #C4704B;        /* Terracotta - warmth, earthiness */
+  --color-accent-light: #D4906B;
   
-  --color-secondary: #628b48;        /* Fern - nature, growth */
-  --color-secondary-light: #7aa35e;
-  --color-secondary-dark: #4a6936;
-  
-  --color-bg: #FAFAFA;               /* Light neutral background */
-  --color-bg-alt: #F0F1F3;           /* Slightly darker */
+  --color-bg: #FDFBF7;            /* Warm off-white */
+  --color-bg-alt: #F5F0E8;        /* Slightly darker warm tone */
   --color-bg-card: #FFFFFF;
   
-  --color-text: #252323;             /* Shadow Grey - main text */
+  --color-text: #2C2C2C;          /* Near black for readability */
   --color-text-muted: #5A5A5A;
-  --color-text-light: #7d869c;       /* Lavender Grey */
+  --color-text-light: #7A7A7A;
   
-  --color-border: #E0E2E6;
-  --color-border-dark: #C4C8D0;
+  --color-border: #E0D8CC;
+  --color-border-dark: #C4B8A8;
   
   /* Typography */
-  --font-heading: 'Inter', 'Segoe UI', sans-serif;
-  --font-body: 'Inter', 'Segoe UI', sans-serif;
+  --font-heading: 'Source Serif 4', 'Georgia', serif;
+  --font-body: 'Source Sans 3', 'Segoe UI', sans-serif;
   
   /* Spacing */
   --space-xs: 0.5rem;
@@ -46,9 +41,9 @@
   --nav-height: 70px;
   
   /* Effects */
-  --shadow-sm: 0 1px 3px rgba(37,35,35,0.08);
-  --shadow-md: 0 4px 12px rgba(37,35,35,0.08);
-  --shadow-lg: 0 8px 24px rgba(37,35,35,0.1);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.1);
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 12px;
@@ -587,13 +582,13 @@ main {
 }
 
 .project-status.active {
-  background: rgba(98, 139, 72, 0.15);
-  color: #4a6936;
+  background: #D4EDDA;
+  color: #155724;
 }
 
 .project-status.completed {
   background: var(--color-bg-alt);
-  color: var(--color-text-light);
+  color: var(--color-text-muted);
 }
 
 .project-card p {
@@ -919,7 +914,7 @@ main {
     background: transparent;
   }
   20%, 80% {
-    background: rgba(60, 145, 230, 0.1);
+    background: rgba(45, 90, 74, 0.1);
   }
 }
 
@@ -989,7 +984,7 @@ main {
 .toolkit-hero {
   text-align: center;
   padding: var(--space-xl) var(--space-lg);
-  background: linear-gradient(135deg, #252323 0%, #3c91e6 100%);
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
   border-radius: var(--radius-lg);
   color: white;
   margin-bottom: var(--space-xl);
@@ -1115,7 +1110,7 @@ main {
 
 /* ----- FOOTER ----- */
 .site-footer {
-  background: #252323;
+  background: var(--color-primary-dark);
   color: rgba(255,255,255,0.8);
   padding: var(--space-lg) 0;
   margin-top: auto;

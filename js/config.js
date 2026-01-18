@@ -36,7 +36,6 @@ const CONFIG = {
       "I believe that young people have the power to enact sociopolitical praxis (critical consciousness) to challenge systems of oppression and bring about social change. I strive to use my skills of quantitative, qualitative, and mixed methods research, facilitation, organizational capacity-building, and leadership development to learn from and with young people about how they are creating a more equitable future.",
       "I currently work as a Senior Researcher at CIRCLE, a non-partisan research center that is part of the Tisch College of Civic Life at Tufts University. I received my Ph.D. in Applied Developmental and Educational Psychology from Boston College."
     ],
-    // Profile image (place in /images/ folder)
     image: "images/profile.jpg"
   },
 

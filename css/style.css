@@ -303,33 +303,41 @@ main {
   max-width: 720px;
   margin-bottom: var(--space-xl);
   font-size: 1.125rem;
+  line-height: 1.8;
 }
 
 .pillars-grid {
   display: flex;
   flex-direction: column;
-  gap: var(--space-xl);
+  gap: var(--space-lg);
+  max-width: 900px;
 }
 
 .pillar-card {
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 140px 1fr;
   gap: var(--space-lg);
+  padding: var(--space-lg);
   background: var(--color-bg-card);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  overflow: hidden;
   transition: all var(--transition-base);
+  align-items: start;
 }
 
 .pillar-card:hover {
   border-color: var(--color-primary-light);
   box-shadow: var(--shadow-md);
+  transform: translateX(4px);
 }
 
 .pillar-image {
-  aspect-ratio: 4/3;
+  width: 140px;
+  height: 140px;
+  border-radius: var(--radius-md);
   overflow: hidden;
+  flex-shrink: 0;
+  background: var(--color-bg-alt);
 }
 
 .pillar-image img {
@@ -339,34 +347,40 @@ main {
 }
 
 .pillar-content {
-  padding: var(--space-lg);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  gap: var(--space-xs);
+  padding-top: var(--space-xs);
 }
 
 .pillar-card h3 {
   color: var(--color-primary);
-  margin-bottom: var(--space-sm);
-  font-size: 1.5rem;
+  margin-bottom: 0;
+  font-size: 1.375rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 .pillar-card p {
   color: var(--color-text-muted);
-  line-height: 1.7;
+  line-height: 1.75;
+  font-size: 1rem;
+  margin: 0;
 }
 
-/* Alternate layout: image on right for odd cards */
-.pillar-card:nth-child(even) {
-  grid-template-columns: 1fr 300px;
+/* Decorative accent line */
+.pillar-card::before {
+  content: none;
 }
 
-.pillar-card:nth-child(even) .pillar-image {
-  order: 2;
+/* Number indicator for each pillar */
+.pillar-card {
+  counter-increment: pillar-counter;
+  position: relative;
 }
 
-.pillar-card:nth-child(even) .pillar-content {
-  order: 1;
+.pillars-grid {
+  counter-reset: pillar-counter;
 }
 
 /* ----- CV PAGE ----- */
@@ -1171,18 +1185,23 @@ main {
   }
   
   /* Pillar cards stack vertically on tablet/mobile */
-  .pillar-card,
-  .pillar-card:nth-child(even) {
-    grid-template-columns: 1fr;
+  .pillar-card {
+    grid-template-columns: 100px 1fr;
+    gap: var(--space-md);
+    padding: var(--space-md);
   }
   
-  .pillar-card:nth-child(even) .pillar-image,
-  .pillar-card:nth-child(even) .pillar-content {
-    order: unset;
+  .pillar-card:hover {
+    transform: none;
   }
   
   .pillar-image {
-    aspect-ratio: 16/9;
+    width: 100px;
+    height: 100px;
+  }
+  
+  .pillar-card h3 {
+    font-size: 1.25rem;
   }
   
   .cv-item {
@@ -1273,6 +1292,23 @@ main {
   .page-header {
     margin-bottom: var(--space-lg);
     padding-bottom: var(--space-md);
+  }
+  
+  /* Pillar cards on small screens */
+  .pillar-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .pillar-image {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 50%;
+  }
+  
+  .pillar-content {
+    align-items: center;
   }
   
   .cv-header {

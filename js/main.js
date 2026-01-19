@@ -473,16 +473,16 @@ function renderPublicationsPage() {
   
   // Calculate counts per category
   const counts = { all: CONFIG.publications.length };
-  let keyWorksCount = 0;
+  let keyWorkCount = 0;
   CONFIG.publications.forEach(pub => {
     // Safely derive category id, default to 'uncategorized' if type is missing
     const categoryId = (pub.type || 'uncategorized').toString().toLowerCase().replace(/\s+/g, '-');
     counts[categoryId] = (counts[categoryId] || 0) + 1;
-    if (pub.keyWorks) {
-      keyWorksCount++;
+    if (pub.keyWork) {
+      keyWorkCount++;
     }
   });
-  counts['key-works'] = keyWorksCount;
+  counts['key-works'] = keyWorkCount;
   
   // Render filter buttons
   if (filtersEl && CONFIG.publicationCategories) {
@@ -507,15 +507,15 @@ function renderPublicationsPage() {
   
   // Render publications
   list.innerHTML = CONFIG.publications.map(pub => {
-    const categoryId = pub.type.toLowerCase().replace(/\s+/g, '-');
+    const categoryId = (pub.type || 'uncategorized').toString().toLowerCase().replace(/\s+/g, '-');
     const hasLink = pub.link && pub.link.trim() !== '';
     const hasDownload = pub.downloadFile && pub.downloadFile.trim() !== '';
 
     return `
-      <article class="publication-item" id="pub-${pub.id}" data-category="${categoryId}" data-key-work="${pub.keyWorks ? 'true' : 'false'}">
+      <article class="publication-item" id="pub-${pub.id}" data-category="${categoryId}" data-key-work="${pub.keyWork ? 'true' : 'false'}">
         <div class="publication-year">${pub.year}</div>
         <div class="publication-content">
-          <h3>${pub.title}${pub.keyWorks ? ' <span class="key-work-badge">Key Work</span>' : ''}</h3>
+          <h3>${pub.title}${pub.keyWork ? ' <span class="key-work-badge">Key Work</span>' : ''}</h3>
           <div class="publication-meta">
             <span class="publication-type">${pub.type}</span>
             <span class="publication-publisher">${pub.publisher}</span>
@@ -569,7 +569,7 @@ function handlePublicationFilter(filter) {
 
   items.forEach((item, index) => {
     const category = item.dataset.category;
-    const isKeyWorks = item.dataset.keyWorks === 'true';
+    const isKeyWorks = item.dataset.keyWork === 'true';
 
     let shouldShow = false;
     if (filter === 'all') {

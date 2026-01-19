@@ -131,7 +131,14 @@ function renderAboutPage() {
   if (introEl) introEl.textContent = CONFIG.about.intro;
   
   if (bioEl && CONFIG.about.bio) {
-    bioEl.innerHTML = CONFIG.about.bio.map(p => `<p>${p}</p>`).join('');
+    bioEl.innerHTML = CONFIG.about.bio.map(p => {
+      // Check if this is a pullquote
+      if (p.startsWith('{{pullquote}}') && p.endsWith('{{/pullquote}}')) {
+        const quoteText = p.replace('{{pullquote}}', '').replace('{{/pullquote}}', '');
+        return `<blockquote class="pullquote">${quoteText}</blockquote>`;
+      }
+      return `<p>${p}</p>`;
+    }).join('');
   }
   
   if (imageEl && CONFIG.about.image) {

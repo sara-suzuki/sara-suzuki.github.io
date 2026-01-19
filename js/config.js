@@ -23,8 +23,8 @@ const CONFIG = {
     { name: "Pillars", href: "pillars.html", enabled: true },
     { name: "Projects", href: "projects.html", enabled: true },
     { name: "Publications", href: "publications.html", enabled: true },
-    { name: "Speaking", href: "speaking.html", enabled: true },
-    { name: "Press", href: "press.html", enabled: true },
+    { name: "Speaking", href: "speaking.html", enabled: false },
+    { name: "Press", href: "press.html", enabled: false },
   ],
 
   // ----- ABOUT PAGE -----

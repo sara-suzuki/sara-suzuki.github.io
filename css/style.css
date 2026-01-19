@@ -263,6 +263,21 @@ main {
   margin-bottom: var(--space-md);
 }
 
+/* Pullquote styling */
+.pullquote {
+  font-family: var(--font-heading);
+  font-size: 1.375rem;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--color-primary);
+  line-height: 1.5;
+  margin: var(--space-lg) 0;
+  padding: var(--space-md) var(--space-lg);
+  border-left: 4px solid var(--color-accent);
+  background: var(--color-bg-alt);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
 /* Contact section */
 .contact-section {
   margin-top: var(--space-xl);

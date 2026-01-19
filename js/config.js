@@ -247,13 +247,14 @@ const CONFIG = {
         {
       id: "ripe-organizing-alabama-2025",
       title: "“Ripe For Organizing”: Youth Civic Engagement Lessons from Alabama",
-      type: "Report",
+      type: "Web Article",
       year: "2025",
       publisher: "CIRCLE",
       authors: "Nicole Li, Sara Suzuki",
       description: "Insights on youth civic engagement strategies and lessons from Alabama.",
       link: "https://circle.tufts.edu/latest-research/ripe-organizing-youth-civic-engagement-lessons-alabama",
-      downloadFile: ""
+      downloadFile: "",
+      keyWork: true
     },
       {
       id: "mamdani-victory-2025",
@@ -320,7 +321,8 @@ const CONFIG = {
       authors: "Deborah Apau, Sara Suzuki, Alberto Medina, Ruby Belle Booth",
       description: "Research examining Gen Z attitudes toward democracy through profile analysis.",
       link: "https://circle.tufts.edu/report-genz-attitudes-democracy",
-      downloadFile: ""
+      downloadFile: "",
+      keyWork: true
     },
 {
       id: "white-youth-2024",
@@ -331,9 +333,8 @@ const CONFIG = {
       authors: "Sara Suzuki, Aixa Marchand, Sara K. Johnson",
       description: "Research on how critical reflection develops anti-oppression commitments in white youth.",
       link: "http://dx.doi.org/10.1111/jora.13054",
-      downloadFile: "files/publications/2024_jra.pdf",
-      keyWork: true
-    },
+      downloadFile: "files/publications/2024_jra.pdf"
+        },
 
     {
       id: "discriminatory-experiences-2025",
@@ -344,9 +345,8 @@ const CONFIG = {
       authors: "Elena Maker Castro, Sara Suzuki, Lindsay Till Hoyt, Laura Wray-Lake, Alison K. Cohen",
       description: "Examining the relationship between discrimination, critical consciousness, and wellbeing during COVID-19.",
       link: "https://doi.org/10.1037/dev0001917",
-      downloadFile: "files/publications/2025_dp.pdf",
-      keyWork: true
-    },
+      downloadFile: "files/publications/2025_dp.pdf"
+        },
     {
       id: "2024-poll-2025",
       title: "Young people and the 2024 election: Struggling, disconnected, and dissatisfied",
@@ -372,7 +372,8 @@ const CONFIG = {
       authors: "Sam Searles, Sara Suzuki, Alberto Medina, Katie Hilton",
       description: "Research on Black youth civic investment and voting barriers.",
       link: "https://circle.tufts.edu/latest-research/black-youth-are-invested-their-communities-encounter-barriers-voting",
-      downloadFile: ""
+      downloadFile: "",
+      keyWork: true
     },
     {
       id: "republican-youth-2024",
@@ -453,14 +454,14 @@ const CONFIG = {
       authors: "Sara Suzuki, Sidney C. May, Scott Seider",
       description: "Research on hope and critical consciousness development in youth of color.",
       link: "https://doi.org/10.1111/jora.12872",
-      downloadFile: "files/publications/2023_jra.pdf",
-      keyWork: true
-    },
+      downloadFile: "files/publications/2023_jra.pdf"
+        },
 
 
            {
       id: "youth-ready-election-2023",
       title: "Youth and the 2024 Election: Likely to Vote and Ready to Drive Action on Key Political Issues",
+      type: "Web Article",
       year: "2023",
       publisher: "CIRCLE",
       authors: "Peter de Guzman, Alberto Medina, Katie Hilton, Kei Kawashima-Ginsberg, Abby Kiesa, Kelly Siegel-Stechler, Sara Suzuki",
@@ -503,7 +504,7 @@ const CONFIG = {
       description: "Research on political attitudes and barriers among Black youth.",
       link: "https://circle.tufts.edu/latest-research/black-youth-value-voting-have-political-ambition-face-barriers-engagement",
       downloadFile: ""
-    },
+        },
 
 
 
@@ -554,7 +555,8 @@ const CONFIG = {
       authors: "Ruby Belle Booth, Peter de Guzman, Sara Suzuki",
       description: "Research on youth-adult partnerships and voter development.",
       link: "https://circle.tufts.edu/latest-research/how-effective-youth-adult-partnerships-can-grow-voters",
-      downloadFile: ""
+      downloadFile: "",
+      keyWork: true
     },
 
 
@@ -567,7 +569,8 @@ const CONFIG = {
       authors: "Sara Suzuki, Abby Kiesa, Alberto Medina",
       description: "Research on how media environments shape youth voting behavior.",
       link: "https://circle.tufts.edu/media-ecosystems",
-      downloadFile: ""
+      downloadFile: "",
+      keyWork: true
     },
 
 
@@ -581,7 +584,8 @@ const CONFIG = {
       authors: "Sara Suzuki, Abby Kiesa, Alberto Medina, SJ McGeady",
       description: "Research on factors that support youth voter participation.",
       link: "https://circle.tufts.edu/latest-research/what-helps-youth-vote-direct-civic-information-and-political-homes",
-      downloadFile: ""
+      downloadFile: "",
+      keyWork: true
     },
 
 
@@ -610,7 +614,8 @@ const CONFIG = {
       authors: "L. Feng, Sara Suzuki, Alberto Medina, SJ McGeady",
       description: "Research on community support and mental health among politically engaged youth.",
       link: "https://circle.tufts.edu/latest-research/community-connections-matter-mental-health-politically-active-youth",
-      downloadFile: ""
+      downloadFile: "",
+      keyWork: true
     },
     {
       id: "genz-power-2023",
@@ -679,8 +684,7 @@ const CONFIG = {
       authors: "Sara Suzuki, Stacy L. Morris, Sara K. Johnson",
       description: "Research on civic asset profiles and their relationship to civic action.",
       link: "https://doi.org/10.1016/j.appdev.2022.101476",
-      downloadFile: "files/publications/2022_jadp.pdf",
-      keyWork: true
+      downloadFile: "files/publications/2022_jadp.pdf"
     },
 
     {
@@ -716,9 +720,8 @@ const CONFIG = {
       authors: "Sara Suzuki, Taina B. Quiles, Elena Maker Castro",
       description: "Exploring within-group differences in critical action among diverse youth.",
       link: "https://doi.org/10.1002/casp.2660",
-      downloadFile: "files/publications/2022_casp.pdf",
-      keyWork: true
-    },
+      downloadFile: "files/publications/2022_casp.pdf"
+        },
 
 
 
@@ -746,7 +749,8 @@ const CONFIG = {
       authors: "Sara Suzuki, Kelly Siegel-Stechler, Peter de Guzman, Alberto Medina, Abby Kiesa, Maha Mapara, Kei Kawashima-Ginsberg",
       description: "Research on pathways and support for young candidates.",
       link: "https://circle.tufts.edu/latest-research/running-for-office",
-      downloadFile: ""
+      downloadFile: "",
+      keyWork: true
     },
 
 
@@ -772,7 +776,8 @@ const CONFIG = {
       authors: "Madeline McGee, Sara Suzuki, Abby Kiesa, Alberto Medina",
       description: "Research on how news consumption translates to civic action.",
       link: "https://circle.tufts.edu/latest-research/news-attention-action-key-role-civic-organizations",
-      downloadFile: ""
+      downloadFile: "",
+      keyWork: true
     },
 
 
@@ -816,9 +821,8 @@ const CONFIG = {
       authors: "Sara Suzuki",
       description: "Doctoral dissertation examining critical consciousness development among youth of color.",
       link: "",
-      downloadFile: "",
-      keyWork: true
-    },
+      downloadFile: ""
+        },
     {
       id: "quantcrit-2021",
       title: "Using QuantCrit to advance an anti-racist developmental science: Applications to mixture modeling",

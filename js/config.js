@@ -7,7 +7,7 @@ const CONFIG = {
   // ----- PERSONAL INFO -----
   name: "Sara Suzuki",
   title: "Ph.D. (she/her/hers)",
-  tagline: "I strive to build a more just democracy through co-creating knowledge and power with young people.",
+  tagline: ,
   
   // ----- CONTACT INFO -----
   contact: {
@@ -34,7 +34,7 @@ const CONFIG = {
     bio: [
       "My research focuses on uncovering and disrupting inequities in youth civic engagement. I consider all forms of change-making, including voting, running for office, community organizing, and service. I look at the pathways that young people have to tackle the issues that they care about and investigate shifts—individual, organizational, institutional, and system-wide—that can bring greater inclusion to those pathways.",
       "I believe that young people have the power to enact sociopolitical praxis (critical consciousness) to challenge systems of oppression and bring about social change. I strive to use my skills of quantitative, qualitative, and mixed methods research, facilitation, organizational capacity-building, and leadership development to learn from and with young people about how they are creating a more equitable future.",
-      "{{pullquote}}Building a more just democracy through co-creating knowledge and power with young people.{{/pullquote}}",
+      "{{pullquote}}I strive to build a more just democracy through co-creating knowledge and power with young people.{{/pullquote}}",
       "I currently work as a Senior Researcher at <a href='https://circle.tufts.edu/' target='_blank' rel='noopener'>CIRCLE</a>, a non-partisan research center that is part of the Tisch College of Civic Life at Tufts University. I received my Ph.D. in Applied Developmental and Educational Psychology from Boston College."
     ],
     // Profile image (place in /images/ folder)
@@ -667,7 +667,7 @@ const CONFIG = {
 
   // ----- FOOTER -----
   footer: {
-    copyright: "© 2025 Sara Suzuki. All rights reserved.",
+    copyright: "© 2024-2026 Sara Suzuki. All rights reserved.",
     message: "Building a more just democracy through co-creating knowledge and power with young people."
   }
 };

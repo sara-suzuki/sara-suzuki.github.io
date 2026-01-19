@@ -303,14 +303,23 @@ main {
   gap: var(--space-xs);
 }
 
-.contact-item svg {
+.contact-item svg,
+.contact-item .contact-icon-img {
   width: 20px;
   height: 20px;
   color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.contact-icon-img {
+  display: block;
+  /* Filter to convert black SVG to green (#2D5A4A) */
+  filter: invert(32%) sepia(18%) saturate(1250%) hue-rotate(115deg) brightness(92%) contrast(89%);
 }
 
 .contact-link {
   font-size: 1rem;
+  color: var(--color-primary);
 }
 
 /* ----- PILLARS/VALUES PAGE ----- */
@@ -326,24 +335,36 @@ main {
   flex-direction: column;
   gap: var(--space-lg);
   max-width: 900px;
+  counter-reset: pillar-counter;
 }
 
 .pillar-card {
-  display: grid;
-  grid-template-columns: 140px 1fr;
-  gap: var(--space-lg);
+  display: flex;
+  flex-direction: column;
   padding: var(--space-lg);
   background: var(--color-bg-card);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   transition: all var(--transition-base);
-  align-items: start;
+  counter-increment: pillar-counter;
+  position: relative;
+  cursor: pointer;
 }
 
 .pillar-card:hover {
   border-color: var(--color-primary-light);
   box-shadow: var(--shadow-md);
-  transform: translateX(4px);
+}
+
+.pillar-card.expanded {
+  border-color: var(--color-primary);
+}
+
+.pillar-header {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: var(--space-lg);
+  align-items: center;
 }
 
 .pillar-image {
@@ -361,11 +382,11 @@ main {
   object-fit: cover;
 }
 
-.pillar-content {
+.pillar-title-wrapper {
   display: flex;
-  flex-direction: column;
-  gap: var(--space-xs);
-  padding-top: var(--space-xs);
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
 }
 
 .pillar-card h3 {
@@ -374,28 +395,74 @@ main {
   font-size: 1.375rem;
   font-weight: 700;
   letter-spacing: -0.01em;
+  flex: 1;
 }
 
-.pillar-card p {
+.pillar-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  transition: all var(--transition-base);
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+.pillar-toggle:hover {
+  background: var(--color-bg-alt);
+  color: var(--color-primary-dark);
+}
+
+.pillar-toggle:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.toggle-icon {
+  width: 24px;
+  height: 24px;
+  transition: transform var(--transition-base);
+}
+
+.pillar-toggle[aria-expanded="true"] .toggle-icon {
+  transform: rotate(180deg);
+}
+
+.pillar-description {
+  padding-top: var(--space-md);
+  padding-left: calc(140px + var(--space-lg));
+  animation: slideDown var(--transition-base);
+}
+
+.pillar-description[hidden] {
+  display: none;
+}
+
+.pillar-description p {
   color: var(--color-text-muted);
   line-height: 1.75;
   font-size: 1rem;
   margin: 0;
 }
 
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Decorative accent line */
 .pillar-card::before {
   content: none;
-}
-
-/* Number indicator for each pillar */
-.pillar-card {
-  counter-increment: pillar-counter;
-  position: relative;
-}
-
-.pillars-grid {
-  counter-reset: pillar-counter;
 }
 
 /* ----- CV PAGE ----- */
@@ -587,12 +654,35 @@ main {
   aspect-ratio: 16 / 9;
   overflow: hidden;
   background: var(--color-bg-alt);
+  position: relative;
 }
 
 .project-cover img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.project-status-badge {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0.25em 0.75em;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+
+.project-status-badge.active {
+  background: #D4EDDA;
+  color: #155724;
+}
+
+.project-status-badge.completed {
+  background: var(--color-bg-alt);
+  color: var(--color-text-muted);
 }
 
 .project-cover-placeholder {
@@ -621,7 +711,7 @@ main {
 }
 
 .project-card h3 {
-  margin-bottom: 0;
+  margin-bottom: var(--space-md);
   color: var(--color-primary-dark);
 }
 
@@ -875,6 +965,10 @@ main {
 
 .publication-content h3 {
   margin-bottom: var(--space-xs);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
 }
 
 .publication-content h3 a {
@@ -883,6 +977,20 @@ main {
 
 .publication-content h3 a:hover {
   color: var(--color-primary);
+}
+
+.key-work-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0.25em 0.75em;
+  border-radius: var(--radius-sm);
+  background: var(--color-accent);
+  color: white;
+  white-space: nowrap;
+  font-family: var(--font-body);
+  letter-spacing: 0.025em;
 }
 
 .publication-meta {
@@ -1200,23 +1308,26 @@ main {
   }
   
   /* Pillar cards stack vertically on tablet/mobile */
-  .pillar-card {
+  .pillar-header {
     grid-template-columns: 100px 1fr;
     gap: var(--space-md);
+  }
+
+  .pillar-card {
     padding: var(--space-md);
   }
-  
-  .pillar-card:hover {
-    transform: none;
-  }
-  
+
   .pillar-image {
     width: 100px;
     height: 100px;
   }
-  
+
   .pillar-card h3 {
     font-size: 1.25rem;
+  }
+
+  .pillar-description {
+    padding-left: calc(100px + var(--space-md));
   }
   
   .cv-item {
@@ -1310,20 +1421,27 @@ main {
   }
   
   /* Pillar cards on small screens */
-  .pillar-card {
+  .pillar-header {
     grid-template-columns: 1fr;
     text-align: center;
   }
-  
+
   .pillar-image {
     width: 100px;
     height: 100px;
     margin: 0 auto;
     border-radius: 50%;
   }
-  
-  .pillar-content {
+
+  .pillar-title-wrapper {
+    flex-direction: column;
     align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .pillar-description {
+    padding-left: 0;
+    text-align: left;
   }
   
   .cv-header {

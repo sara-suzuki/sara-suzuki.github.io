@@ -155,9 +155,9 @@ function renderContactInfo() {
   
   const icons = {
     email: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>',
-    linkedin: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>',
+    linkedin: '<img src="images/linkedin.svg" alt="LinkedIn" class="contact-icon-img">',
     twitter: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>',
-    bluesky: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor"><path d="M407.8 294.7c-3.3-.4-6.7-.8-10-1.3c3.4.4 6.7.9 10 1.3zM288 227.1C261.9 176.4 190.9 81.9 124.9 35.3C61.6-9.4 37.5-1.7 21.6 5.5C3.3 13.8 0 41.9 0 58.4S9.1 194 15 213.9c19.5 65.7 89.1 87.9 153.2 80.7c3.3-.5 6.6-.9 10-1.4c-3.3.5-6.6 1-10 1.4C74.3 308.6-9.1 342.8 100.3 464c64.3 59.1 174.7-18.3 187.7-37.6c13 19.3 123.4 96.7 187.7 37.6c109.4-100.5 26-155.7-68.9-169.9c-3.3-.4-6.7-.8-10-1.3c3.3.4 6.7.9 10 1.3c64.1 7.1 133.6-15.1 153.2-80.7C566 194 576 75.3 576 58.4S572.7 13.8 554.4 5.5C538.5-1.7 514.4-9.4 451.1 35.3C385.1 81.9 314.1 176.4 288 227.1z"/></svg>',
+    bluesky: '<img src="images/bluesky.svg" alt="Bluesky" class="contact-icon-img">',
     location: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>'
   };
   
@@ -172,7 +172,12 @@ function renderContactInfo() {
     if (key === 'email') {
       linkHtml = `<a href="mailto:${value}" class="contact-link">${value}</a>`;
     } else if (key === 'linkedin' || key === 'twitter' || key === 'bluesky') {
-      const label = key.charAt(0).toUpperCase() + key.slice(1);
+      let label = key.charAt(0).toUpperCase() + key.slice(1);
+      if (key === 'linkedin') {
+        label = 'LinkedIn';
+      } else if (key === 'bluesky') {
+        label = 'Bluesky';
+      }
       linkHtml = `<a href="${value}" class="contact-link" target="_blank" rel="noopener">${label}</a>`;
     } else if (key === 'location') {
       linkHtml = `<span class="contact-link">${value}</span>`;
@@ -190,24 +195,64 @@ function renderContactInfo() {
 function renderPillarsPage() {
   const introEl = document.getElementById('pillars-intro');
   const grid = document.getElementById('pillars-grid');
-  
+
   if (introEl && CONFIG.pillarsIntro) {
     introEl.textContent = CONFIG.pillarsIntro;
   }
-  
+
   if (!grid || !CONFIG.pillars) return;
-  
-  grid.innerHTML = CONFIG.pillars.map(pillar => `
-    <div class="pillar-card">
-      <div class="pillar-image">
-        <img src="${pillar.image}" alt="${pillar.title}">
+
+  grid.innerHTML = CONFIG.pillars.map((pillar, index) => `
+    <div class="pillar-card" data-pillar-index="${index}">
+      <div class="pillar-header">
+        <div class="pillar-image">
+          <img src="${pillar.image}" alt="${pillar.title}">
+        </div>
+        <div class="pillar-title-wrapper">
+          <h3>${pillar.title}</h3>
+          <button class="pillar-toggle" aria-expanded="false" aria-label="Expand ${pillar.title} description">
+            <svg class="toggle-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+        </div>
       </div>
-      <div class="pillar-content">
-        <h3>${pillar.title}</h3>
+      <div class="pillar-description" hidden>
         <p>${pillar.description}</p>
       </div>
     </div>
   `).join('');
+
+  // Add click handlers for toggles
+  initPillarToggles();
+}
+
+function initPillarToggles() {
+  const cards = document.querySelectorAll('.pillar-card');
+
+  cards.forEach(card => {
+    const header = card.querySelector('.pillar-header');
+    const toggle = card.querySelector('.pillar-toggle');
+    const description = card.querySelector('.pillar-description');
+
+    // Make entire header clickable
+    header.addEventListener('click', function(e) {
+      e.preventDefault();
+      const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+
+      if (isExpanded) {
+        // Collapse
+        toggle.setAttribute('aria-expanded', 'false');
+        description.hidden = true;
+        card.classList.remove('expanded');
+      } else {
+        // Expand
+        toggle.setAttribute('aria-expanded', 'true');
+        description.hidden = false;
+        card.classList.add('expanded');
+      }
+    });
+  });
 }
 
 /* ----- CV PAGE ----- */
@@ -277,26 +322,33 @@ function renderProjectsPage() {
   const grid = document.getElementById('projects-grid');
   if (!grid || !CONFIG.projects) return;
   
-  grid.innerHTML = CONFIG.projects.map(project => `
-    <a href="project-${project.id}.html" class="project-card-link">
-      <article class="project-card">
+  grid.innerHTML = CONFIG.projects.map(project => {
+    const content = `
+      <article class="project-card ${project.forthcoming ? 'project-forthcoming' : ''}">
         <div class="project-cover">
-          ${project.coverImage 
+          ${project.coverImage
             ? `<img src="${project.coverImage}" alt="${project.title}">`
             : `<div class="project-cover-placeholder">Project Image</div>`
           }
+          ${project.status === 'Active' ? '<span class="project-status-badge active">Active</span>' : ''}
+          ${project.status === 'Completed' ? '<span class="project-status-badge completed">Completed</span>' : ''}
         </div>
         <div class="project-card-content">
-          <div class="project-header">
-            <h3>${project.title}</h3>
-            <span class="project-status ${project.status.toLowerCase()}">${project.status}</span>
-          </div>
+          <h3>${project.title}</h3>
           <p>${project.shortDescription}</p>
-          <span class="project-link-text">View Project →</span>
+          ${!project.forthcoming ? '<span class="project-link-text">Learn more →</span>' : ''}
         </div>
       </article>
-    </a>
-  `).join('');
+    `;
+
+    // If forthcoming, return without link wrapper
+    if (project.forthcoming) {
+      return content;
+    }
+
+    // Otherwise wrap in link
+    return `<a href="project-${project.id}.html" class="project-card-link">${content}</a>`;
+  }).join('');
 }
 
 /* ----- PROJECT DETAIL PAGE ----- */
@@ -323,45 +375,14 @@ function renderProjectDetailPage() {
   const headerEl = document.getElementById('project-header');
   if (headerEl) {
     headerEl.innerHTML = `
-      <div class="project-detail-header">
-        <div>
-          <h1>${project.title}</h1>
-          <span class="project-status ${project.status.toLowerCase()}">${project.status}</span>
-        </div>
-        ${project.externalLink ? `
-          <a href="${project.externalLink}" class="btn btn-primary" target="_blank" rel="noopener">
-            <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-              <polyline points="15 3 21 3 21 9"></polyline>
-              <line x1="10" y1="14" x2="21" y2="3"></line>
-            </svg>
-            Visit Project
-          </a>
-        ` : ''}
-      </div>
+      <h1>${project.title}</h1>
     `;
   }
-  
-  // Render gallery
+
+  // Remove gallery - don't render it
   const galleryEl = document.getElementById('project-gallery');
-  if (galleryEl && project.gallery && project.gallery.length > 0) {
-    galleryEl.innerHTML = `
-      <div class="project-gallery">
-        ${project.gallery.map((img, index) => `
-          <div class="gallery-item ${index === 0 ? 'gallery-item-large' : ''}">
-            <img src="${img}" alt="${project.title} - Image ${index + 1}">
-          </div>
-        `).join('')}
-      </div>
-    `;
-  } else if (galleryEl) {
-    galleryEl.innerHTML = `
-      <div class="project-gallery">
-        <div class="gallery-item gallery-item-large">
-          <div class="gallery-placeholder">Project images will appear here</div>
-        </div>
-      </div>
-    `;
+  if (galleryEl) {
+    galleryEl.innerHTML = '';
   }
   
   // Render description
@@ -402,12 +423,15 @@ function renderProjectDetailPage() {
   const pressEl = document.getElementById('project-press');
   if (pressEl && project.relatedPress && project.relatedPress.length > 0) {
     const relatedPress = project.relatedPress
-      .map(title => CONFIG.press.find(p => p.title === title))
+      .map(idOrTitle => {
+        // First try to find by ID, then fall back to title for backwards compatibility
+        return CONFIG.press.find(p => p.id === idOrTitle) || CONFIG.press.find(p => p.title === idOrTitle);
+      })
       .filter(Boolean);
-    
+
     if (relatedPress.length > 0) {
       pressEl.innerHTML = `
-        <h2>Press Coverage</h2>
+        <h2>Related Press</h2>
         <ul class="related-list">
           ${relatedPress.map(item => `
             <li>
@@ -449,10 +473,15 @@ function renderPublicationsPage() {
   
   // Calculate counts per category
   const counts = { all: CONFIG.publications.length };
+  let keyWorksCount = 0;
   CONFIG.publications.forEach(pub => {
     const categoryId = pub.type.toLowerCase().replace(/\s+/g, '-');
     counts[categoryId] = (counts[categoryId] || 0) + 1;
+    if (pub.keyWork) {
+      keyWorksCount++;
+    }
   });
+  counts['key-works'] = keyWorksCount;
   
   // Render filter buttons
   if (filtersEl && CONFIG.publicationCategories) {
@@ -480,12 +509,12 @@ function renderPublicationsPage() {
     const categoryId = pub.type.toLowerCase().replace(/\s+/g, '-');
     const hasLink = pub.link && pub.link.trim() !== '';
     const hasDownload = pub.downloadFile && pub.downloadFile.trim() !== '';
-    
+
     return `
-      <article class="publication-item" id="pub-${pub.id}" data-category="${categoryId}">
+      <article class="publication-item" id="pub-${pub.id}" data-category="${categoryId}" data-key-work="${pub.keyWork ? 'true' : 'false'}">
         <div class="publication-year">${pub.year}</div>
         <div class="publication-content">
-          <h3>${pub.title}</h3>
+          <h3>${pub.title}${pub.keyWork ? ' <span class="key-work-badge">Key Work</span>' : ''}</h3>
           <div class="publication-meta">
             <span class="publication-type">${pub.type}</span>
             <span class="publication-publisher">${pub.publisher}</span>
@@ -527,20 +556,29 @@ function renderPublicationsPage() {
 function handlePublicationFilter(filter) {
   const filtersEl = document.getElementById('publication-filters');
   const list = document.getElementById('publications-list');
-  
+
   // Update active button
   filtersEl.querySelectorAll('.filter-btn').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.filter === filter);
   });
-  
+
   // Filter publications
   const items = list.querySelectorAll('.publication-item');
   let visibleCount = 0;
-  
+
   items.forEach((item, index) => {
     const category = item.dataset.category;
-    const shouldShow = filter === 'all' || category === filter;
-    
+    const isKeyWork = item.dataset.keyWork === 'true';
+
+    let shouldShow = false;
+    if (filter === 'all') {
+      shouldShow = true;
+    } else if (filter === 'key-works') {
+      shouldShow = isKeyWork;
+    } else {
+      shouldShow = category === filter;
+    }
+
     if (shouldShow) {
       item.classList.remove('hidden');
       item.classList.add('fade-in');
@@ -552,7 +590,7 @@ function handlePublicationFilter(filter) {
       item.classList.remove('fade-in');
     }
   });
-  
+
   // Update count
   updatePublicationCount(filter, visibleCount);
 }

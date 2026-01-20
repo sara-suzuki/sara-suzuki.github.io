@@ -5,8 +5,8 @@
 
 const CONFIG = {
   // ----- PERSONAL INFO -----
-  name: "Sara Suzuki",
-  title: "Ph.D. (she/her/hers)",
+  name: "Sara Suzuki, Ph.D.",
+  title: "(she/her/hers)",
   
   // ----- CONTACT INFO -----
   contact: {
@@ -23,8 +23,8 @@ const CONFIG = {
     { name: "Pillars", href: "pillars.html", enabled: true },
     { name: "Projects", href: "projects.html", enabled: true },
     { name: "Publications", href: "publications.html", enabled: true },
-    { name: "Speaking", href: "speaking.html", enabled: false },
-    { name: "Press", href: "press.html", enabled: false },
+    { name: "Speaking", href: "speaking.html", enabled: true },
+    { name: "Press", href: "press.html", enabled: true },
   ],
 
   // ----- ABOUT PAGE -----
@@ -1161,7 +1161,7 @@ const CONFIG = {
         location: "Chestnut Hill, MA"
       }
     ],
-    bookingNote: "My experience includes guest lectures at both undergraduate and graduate levels, contributions to panels and conferences of professional organizations, as well as professional development workshops. I tailor each presentation to meet the specific needs and knowledge level of your audience. Honorariums are adjusted on a sliding scale to ensure accessibility for various organizations and institutions. To discuss speaking opportunities, please contact sara.suzuki@tufts.edu."
+    bookingNote: "My experience includes guest lectures at both undergraduate and graduate levels, contributions to panels and conferences of professional organizations, as well as professional development workshops, including training for the first two cohorts of <a href='https://immerse.education.ucsb.edu/' target='_blank' rel='noopener'>IMMERSE fellows</a>. I tailor each presentation to meet the specific needs and knowledge level of your audience. Honorariums are adjusted on a sliding scale to ensure accessibility for various organizations and institutions. To discuss speaking opportunities, please contact sara.suzuki@tufts.edu."
   },
 
   // ----- FOOTER -----

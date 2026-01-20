@@ -305,6 +305,7 @@ function renderSpeakingPage() {
     engagementsEl.innerHTML = CONFIG.speaking.pastEngagements.map(eng => `
       <div class="engagement-item">
         <div class="engagement-event">${eng.event}</div>
+        ${eng.title ? `<div class="engagement-title">${eng.title}</div>` : ''}
         <span class="engagement-type">${eng.type}</span>
         <div class="engagement-meta">
           <div>${eng.date}</div>
@@ -314,7 +315,7 @@ function renderSpeakingPage() {
     `).join('');
   }
   
-  if (bookingEl) bookingEl.textContent = CONFIG.speaking.bookingNote;
+  if (bookingEl) bookingEl.innerHTML = CONFIG.speaking.bookingNote;
 }
 
 /* ----- PROJECTS PAGE ----- */

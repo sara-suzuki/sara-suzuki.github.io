@@ -881,130 +881,210 @@ const CONFIG = {
     {
       id: "pittsburgh-post-gazette",
       outlet: "Pittsburgh Post-Gazette",
-      title: "Republicans",
+      title: "Young Republicans are increasing on college campuses, including in Pittsburgh",
       date: "February 2, 2025",
       type: "Feature",
-      link: "https://sara-suzuki.com/2025/02/02/pittsburgh-post-gazette/"
+      link: "https://www.post-gazette.com/news/education/2025/02/02/college-republicans-pittsburgh-trump-election/stories/202501310076"
     },
     {
       id: "wfyi",
       outlet: "WFYI",
-      title: "Radio Interview on Sociopolitical Stress",
+      title: "Election-related stress is a thing. Here's what specialists advise to do",
       date: "October 24, 2024",
       type: "Radio Interview",
-      link: "https://sara-suzuki.com/2024/10/24/wfyi/"
+      link: "https://www.wfyi.org/news/articles/election-related-stress-is-a-thing-heres-what-specialists-advise-to-do"
     },
     {
       id: "ct-mirror",
       outlet: "CT Mirror",
-      title: "Climate and Youth Engagement",
+      title: "Is climate change a key issue for young voters? It's complicated",
       date: "October 13, 2024",
       type: "Feature",
-      link: "https://sara-suzuki.com/2024/10/13/ct-mirror/"
+      link: "https://ctmirror.org/2024/10/13/ct-climate-change-youth-vote/"
     },
     {
       id: "texas-tribune",
       outlet: "The Texas Tribune",
-      title: "Running for Office",
+      title: "Texas is a young state with older elected officials. Some young leaders are trying to change that.",
       date: "October 8, 2024",
       type: "Feature",
-      link: "https://sara-suzuki.com/2024/10/08/the-texas-tribune/"
+      link: "https://www.texastribune.org/2024/10/08/texas-legislature-gerontocracy-young-voters/"
     },
     {
       id: "michigan-public",
       outlet: "Michigan Public",
-      title: "Elections",
+      title: "What the Vote?: Gen Z's political power",
       date: "October 8, 2024",
       type: "Radio Interview",
-      link: "https://sara-suzuki.com/2024/10/08/michigan-public/"
+      link: "https://www.michiganpublic.org/wtv/2024-10-08/what-the-vote-gen-zs-political-power"
     },
     {
       id: "sarasota-magazine",
       outlet: "Sarasota Magazine",
-      title: "Youth Organizing",
+      title: "The SEE Alliance Is Working to Mobilize Florida's Young Voters",
       date: "August 19, 2024",
       type: "Feature",
-      link: "https://sara-suzuki.com/2024/08/19/sarasota-magazine/"
+      link: "https://www.sarasotamagazine.com/news-and-profiles/2024/08/see-alliance"
     },
     {
       id: "pra-podcast",
       outlet: "Creating Positive Social Change with PRA",
-      title: "Sociopolitical Stress",
+      title: "Data Points: Election Stress: Supporting the Well-Being of College Students",
       date: "August 15, 2024",
       type: "Podcast",
-      link: "https://sara-suzuki.com/2024/08/15/creating-positive-social-change-with-pra/"
+      link: "https://soundcloud.com/policyresearch/dp-election-stress"
+    },
+    {
+      id: "kawc",
+      outlet: "KAWC",
+      title: "Young voters enthused about election but don't feel heard",
+      date: "August 8, 2024",
+      type: "Feature",
+      link: "https://www.kawc.org/news/2024-08-08/young-voters-enthused-about-election-but-dont-feel-heard"
     },
     {
       id: "fast-company",
       outlet: "Fast Company",
-      title: "Running for Office",
+      title: "Inside David Hogg's fearless bet that Gen Z politicians can save American democracy",
       date: "July 24, 2024",
       type: "Feature",
-      link: "https://sara-suzuki.com/2024/07/24/fast-company/"
+      link: "https://www.fastcompany.com/91150085/david-hogg-leaders-we-deserve-kevin-lata-gen-z-candidate-election"
+    },
+    {
+      id: "tufts-daily-2024",
+      outlet: "The Tufts Daily",
+      title: "CIRCLE and students share their thoughts on voting and the upcoming 2024 election cycle",
+      date: "April 5, 2024",
+      type: "Feature",
+      link: "https://www.tuftsdaily.com/article/2024/04/circle-and-students-share-their-thoughts-on-voting-and-the-upcoming-2024-election-cycle"
     },
     {
       id: "kera-think",
       outlet: "KERA's Think",
-      title: "Elections",
+      title: "What drives young people to vote",
       date: "March 21, 2024",
       type: "Radio Interview",
-      link: "https://sara-suzuki.com/2024/03/21/keras-think/"
+      link: "https://think.kera.org/2024/03/21/what-drives-young-people-to-vote/"
     },
     {
       id: "governing",
       outlet: "Governing",
-      title: "Elections",
+      title: "Will Young Voters Shift American Politics in 2024?",
       date: "February 5, 2024",
       type: "Feature",
-      link: "https://sara-suzuki.com/2024/02/05/governing/"
+      link: "https://www.governing.com/politics/will-young-voters-shift-american-politics-in-2024"
     },
     {
       id: "politico-2024",
       outlet: "POLITICO",
-      title: "Climate",
+      title: "The next threat to Biden's climate agenda",
       date: "January 18, 2024",
       type: "Feature",
-      link: "https://sara-suzuki.com/2024/01/18/politico/"
+      link: "https://www.politico.com/newsletters/power-switch/2024/01/18/the-next-threat-to-bidens-climate-agenda-00136323"
+    },
+    {
+      id: "ee-news-politico-2024",
+      outlet: "E&E News | POLITICO",
+      title: "Biden needs young voters. Can his climate policy rally them?",
+      date: "January 18, 2024",
+      type: "Feature",
+      link: "https://www.eenews.net/articles/biden-needs-young-voters-can-his-climate-policy-rally-them/"
     },
     {
       id: "usa-today",
       outlet: "USA Today",
-      title: "Running for Office",
+      title: "Meet the new faces of politics: Here's why more Gen Z candidates are running for office",
       date: "November 15, 2023",
       type: "Feature",
-      link: "https://sara-suzuki.com/2023/11/15/usa-today/"
+      link: "https://www.usatoday.com/story/news/politics/elections/2023/11/15/more-gen-z-candidates-running-for-office/70567851007/"
     },
     {
       id: "detroit-news",
       outlet: "Detroit News",
-      title: "Running for Office",
+      title: "Michigan's Gen Z politicians struggle to get a foot in the door of public office",
       date: "September 21, 2023",
       type: "Feature",
-      link: "https://sara-suzuki.com/2023/09/21/detroit-news/"
+      link: "https://www.detroitnews.com/story/news/local/michigan/2023/09/21/michigan-gen-z-voters-midterm-election/70765308007/"
+    },
+    {
+      id: "up-and-up",
+      outlet: "The Up and Up",
+      title: "What can a community's media environment say about youth voter turnout?",
+      date: "July 21, 2023",
+      type: "Feature",
+      link: "https://www.theupandup.us/p/media-ecosystem-youth-voter-turnout"
+    },
+    {
+      id: "chalkbeat",
+      outlet: "Chalkbeat New York",
+      title: "'It awakened a part of us': How NYC students are turning the trauma of gun violence into action",
+      date: "July 5, 2023",
+      type: "Feature",
+      link: "https://ny.chalkbeat.org/2023/7/5/23777363/nyc-schools-neighborhood-youth-gun-violence-activism-student-mental-health"
+    },
+    {
+      id: "tufts-daily-2023",
+      outlet: "The Tufts Daily",
+      title: "Proposed Mass. bill would allow parents to use campaign funds for childcare",
+      date: "March 1, 2023",
+      type: "Feature",
+      link: "https://www.tuftsdaily.com/article/2023/03/proposed-mass-bill-would-allow-parents-to-use-campaign-funds-for-childcare"
+    },
+    {
+      id: "ee-news-politico-2022",
+      outlet: "E&E News | POLITICO",
+      title: "Young Climate Voters Could Tilt Georgia's Runoff Election for Senate",
+      date: "November 28, 2022",
+      type: "Feature",
+      link: "https://www.scientificamerican.com/article/young-climate-voters-could-tilt-georgias-runoff-election-for-senate/"
+    },
+    {
+      id: "wright-state-guardian",
+      outlet: "The Wright State Guardian",
+      title: "Big Topics on the Ballot Take Form",
+      date: "November 15, 2022",
+      type: "Feature",
+      link: "https://wsuguardian.com/big-topics-on-the-ballot-take-form/"
+    },
+    {
+      id: "kalw",
+      outlet: "KALW",
+      title: "One Planet Series: How important is climate change for voters in the midterm elections?",
+      date: "October 31, 2022",
+      type: "Radio Interview",
+      link: "https://www.kalw.org/show/your-call/2022-10-31/one-planet-series-how-important-is-climate-change-for-voters-in-the-midterm-elections"
     },
     {
       id: "bbc-news",
       outlet: "BBC News",
-      title: "Running for Office",
+      title: "US midterm elections: What Congress can learn from country with youngest lawmakers",
       date: "October 6, 2022",
       type: "Feature",
-      link: "https://sara-suzuki.com/2022/10/06/bbc-news/"
+      link: "https://www.bbc.com/news/world-europe-63068931"
+    },
+    {
+      id: "tufts-daily-2022",
+      outlet: "The Tufts Daily",
+      title: "CIRCLE finds climate change as top issue driving youth political engagement",
+      date: "April 11, 2022",
+      type: "Feature",
+      link: "https://www.tuftsdaily.com/article/2022/04/circle-finds-climate-change-as-top-issue-driving-youth-political-engagement"
     },
     {
       id: "wgbh-community-safety",
       outlet: "WGBH",
-      title: "Community Safety",
+      title: "Should there be a separate 911 system for mental health crises?",
       date: "February 23, 2022",
       type: "Radio Interview",
-      link: "https://sara-suzuki.com/2022/02/23/wgbh/"
+      link: "https://www.wgbh.org/news/local/2022-02-23/should-there-be-a-separate-911-system-for-mental-health-crises"
     },
     {
       id: "harvard-crimson-community-safety",
       outlet: "The Harvard Crimson",
-      title: "Community Safety",
+      title: "Cambridge Weighs Non-Police Public Safety Alternatives",
       date: "January 27, 2022",
       type: "Feature",
-      link: "https://sara-suzuki.com/2022/01/27/the-harvard-crimson/"
+      link: "https://www.thecrimson.com/article/2022/1/27/cambridge-considering-policing-alternatives/"
     }
   ],
 

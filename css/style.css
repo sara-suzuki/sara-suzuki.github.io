@@ -663,27 +663,7 @@ main {
   object-fit: cover;
 }
 
-.project-status-badge {
-  position: absolute;
-  top: var(--space-sm);
-  right: var(--space-sm);
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  padding: 0.25em 0.75em;
-  border-radius: var(--radius-sm);
-  white-space: nowrap;
-}
 
-.project-status-badge.active {
-  background: #D4EDDA;
-  color: #155724;
-}
-
-.project-status-badge.completed {
-  background: var(--color-bg-alt);
-  color: var(--color-text-muted);
-}
 
 .project-cover-placeholder {
   width: 100%;

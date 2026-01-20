@@ -794,7 +794,14 @@ const CONFIG = {
       downloadFile: ""
     },
     
- {
+ 
+
+    
+  
+
+    // 2021
+
+    {
       id: "media-making-2021",
       title: "Media-making about social and political issues builds confidence in teens",
       type: "Web Article",
@@ -806,13 +813,7 @@ const CONFIG = {
       downloadFile: ""
     },
 
-  
 
-
-    
-  
-
-    // 2021
     {
       id: "dissertation-2021",
       title: "Critical consciousness and positive youth development: A group-differential longitudinal study among youth of color in the United States",

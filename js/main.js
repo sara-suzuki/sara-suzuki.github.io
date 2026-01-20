@@ -330,8 +330,7 @@ function renderProjectsPage() {
             ? `<img src="${project.coverImage}" alt="${project.title}">`
             : `<div class="project-cover-placeholder">Project Image</div>`
           }
-          ${project.status === 'Active' ? '<span class="project-status-badge active">Active</span>' : ''}
-          ${project.status === 'Completed' ? '<span class="project-status-badge completed">Completed</span>' : ''}
+          
         </div>
         <div class="project-card-content">
           <h3>${project.title}</h3>

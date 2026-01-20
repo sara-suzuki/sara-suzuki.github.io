@@ -302,6 +302,17 @@ const CONFIG = {
       downloadFile: ""
     },
         {
+      id: "discriminatory-experiences-2025",
+      title: "Discriminatory experiences, critical consciousness development, and well-being among emerging adults",
+      type: "Journal Article",
+      year: "2025",
+      publisher: "Developmental Psychology",
+      authors: "Elena Maker Castro, Sara Suzuki, Lindsay Till Hoyt, Laura Wray-Lake, Alison K. Cohen",
+      description: "Examining the relationship between discrimination, critical consciousness, and wellbeing during COVID-19.",
+      link: "https://doi.org/10.1037/dev0001917",
+      downloadFile: "files/publications/2025_dp.pdf"
+        },
+        {
       id: "belonging-efficacy-2025",
       title: "A sense of belonging and a positive school climate are key to building youth political efficacy",
       type: "Web Article",
@@ -324,29 +335,7 @@ const CONFIG = {
       downloadFile: "",
       keyWork: true
     },
-{
-      id: "white-youth-2024",
-      title: "The role of parents' and adolescents' critical reflection in the development of white youths' commitments to dismantling oppression",
-      type: "Journal Article",
-      year: "2024",
-      publisher: "Journal of Research on Adolescence",
-      authors: "Sara Suzuki, Aixa Marchand, Sara K. Johnson",
-      description: "Research on how critical reflection develops anti-oppression commitments in white youth.",
-      link: "http://dx.doi.org/10.1111/jora.13054",
-      downloadFile: "files/publications/2024_jra.pdf"
-        },
 
-    {
-      id: "discriminatory-experiences-2025",
-      title: "Discriminatory experiences, critical consciousness development, and well-being among emerging adults",
-      type: "Journal Article",
-      year: "2025",
-      publisher: "Developmental Psychology",
-      authors: "Elena Maker Castro, Sara Suzuki, Lindsay Till Hoyt, Laura Wray-Lake, Alison K. Cohen",
-      description: "Examining the relationship between discrimination, critical consciousness, and wellbeing during COVID-19.",
-      link: "https://doi.org/10.1037/dev0001917",
-      downloadFile: "files/publications/2025_dp.pdf"
-        },
     {
       id: "2024-poll-2025",
       title: "Young people and the 2024 election: Struggling, disconnected, and dissatisfied",
@@ -362,7 +351,19 @@ const CONFIG = {
   
     
     // 2024
-    
+    {
+      id: "white-youth-2024",
+      title: "The role of parents' and adolescents' critical reflection in the development of white youths' commitments to dismantling oppression",
+      type: "Journal Article",
+      year: "2024",
+      publisher: "Journal of Research on Adolescence",
+      authors: "Sara Suzuki, Aixa Marchand, Sara K. Johnson",
+      description: "Research on how critical reflection develops anti-oppression commitments in white youth.",
+      link: "http://dx.doi.org/10.1111/jora.13054",
+      downloadFile: "files/publications/2024_jra.pdf"
+        },
+
+
     {
       id: "black-youth-2024",
       title: "Black youth are invested in their communities but encounter barriers to voting",

@@ -1119,49 +1119,56 @@ const CONFIG = {
     ],
     pastEngagements: [
       {
-        event: "Convening on Affective Polarization Among Young People",
+        title: "Affective polarization within youth's relationships to democracy",
+        event: "Convening on affective polarization among young people hosted by the Institute for Citizens & Scholars and Civic Education Research Lab",
         type: "Presentation",
         date: "April 2025",
-        location: "Institute for Citizens & Scholars"
+        location: "Washington, DC"
       },
       {
+        title: "The youth vote: Overcoming motivational and structural barriers",
         event: "Harvard Kennedy School Executive Session",
         type: "Presentation",
         date: "February 2025",
         location: "Cambridge, MA"
       },
       {
+        title: "The Power of Youth Voice",
         event: "Made By Us Youth250 Bureau",
         type: "Presentation",
         date: "January 2025",
         location: "Virtual"
       },
       {
+        title: "Storytelling with Data: Creating Data-Based Stories of Impact",
         event: "Allstate Young Leaders Learning Community",
         type: "Workshop",
         date: "September 2024",
         location: "Virtual"
       },
       {
-        event: "IMMERSE Institute",
+        title: "QuantCrit: Applications to Mixture Modeling",
+        event: "U.C. Santa Barbara IMMERSE (Institute on Mixture Modeling for Equity-Oriented Researchers, Scholars, & Educators)",
         type: "Workshop",
         date: "August 2024",
-        location: "UC Santa Barbara"
+        location: "Virtual"
       },
       {
+        title: "Empowering Youth Voices in Community Health Research",
         event: "Tufts University Community Symposium",
-        type: "Presentation",
+        type: "Workshop",
         date: "April 2024",
         location: "Medford, MA"
       },
       {
-        event: "Boston College Guest Lecture",
+        title: "Frameworks for understanding how youth take action to change the world: Contribution, civic engagement, and ciritcal consciousness",
+        event: "Boton College course on Positive Youth Development",
         type: "Guest Lecture",
         date: "November 2023",
-        location: "Chestnut Hill, MA"
+        location: "Virtual"
       }
     ],
-    bookingNote: "My experience includes guest lectures at both undergraduate and graduate levels, contributions to panels and conferences of professional organizations, as well as professional development workshops, including training for the first two cohorts of <a href='https://immerse.education.ucsb.edu/' target='_blank' rel='noopener'>IMMERSE fellows</a>. I tailor each presentation to meet the specific needs and knowledge level of your audience. Honorariums are adjusted on a sliding scale to ensure accessibility for various organizations and institutions. To discuss speaking opportunities, please contact sara.suzuki@tufts.edu."
+    bookingNote: "My experience includes guest lectures at both undergraduate and graduate levels, contributions to panels and conferences of professional organizations, as well as professional development workshops, including training for the first two cohorts of <a href='https://immerse.education.ucsb.edu/' target='_blank' rel='noopener'>IMMERSE fellows</a>. I tailor each presentation to meet the specific needs and knowledge level of your audience. <br><br>Honorariums are adjusted on a sliding scale to ensure accessibility for various organizations and institutions. <br><br>To discuss speaking opportunities, please contact sara.suzuki@tufts.edu."
   },
 
   // ----- FOOTER -----

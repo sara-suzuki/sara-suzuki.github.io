@@ -336,7 +336,7 @@ function renderProjectsPage() {
         <div class="project-card-content">
           <h3>${project.title}</h3>
           <p>${project.shortDescription}</p>
-          ${!project.forthcoming ? '<span class="project-link-text">Learn more →</span>' : ''}
+          ${!project.forthcoming ? '<span class="project-link-text">Learn more</span>' : ''}
         </div>
       </article>
     `;
@@ -452,6 +452,20 @@ function renderProjectDetailPage() {
 }
 
 /* ----- PUBLICATIONS PAGE ----- */
+// Helper function to extract DOI from a URL
+function extractDOI(url) {
+  if (!url) return null;
+
+  // Match DOI patterns in URLs
+  // Common patterns: https://doi.org/10.xxxx/xxxxx or http://dx.doi.org/10.xxxx/xxxxx
+  const doiMatch = url.match(/(?:doi\.org|dx\.doi\.org)\/(.+)/i);
+  if (doiMatch && doiMatch[1]) {
+    return doiMatch[1].trim();
+  }
+
+  return null;
+}
+
 function renderPublicationsPage() {
   const filtersEl = document.getElementById('publication-filters');
   const countEl = document.getElementById('publication-count');
@@ -510,6 +524,7 @@ function renderPublicationsPage() {
     const categoryId = (pub.type || 'uncategorized').toString().toLowerCase().replace(/\s+/g, '-');
     const hasLink = pub.link && pub.link.trim() !== '';
     const hasDownload = pub.downloadFile && pub.downloadFile.trim() !== '';
+    const doi = extractDOI(pub.link);
 
     return `
       <article class="publication-item" id="pub-${pub.id}" data-category="${categoryId}" data-key-work="${pub.keyWork ? 'true' : 'false'}">
@@ -543,6 +558,11 @@ function renderPublicationsPage() {
                   Download
                 </a>
               ` : ''}
+            </div>
+          ` : ''}
+          ${doi ? `
+            <div class="altmetric-badge-container">
+              <div class="altmetric-embed" data-badge-type="donut" data-badge-popover="right" data-doi="${doi}"></div>
             </div>
           ` : ''}
         </div>

@@ -1124,6 +1124,17 @@ main {
   margin-top: var(--space-sm);
 }
 
+.altmetric-badge-container {
+  margin-top: var(--space-md);
+  overflow: visible;
+  width: 100%;
+  max-width: fit-content;
+}
+
+.altmetric-badge-container .altmetric-embed {
+  max-width: 100%;
+}
+
 .btn-small {
   display: inline-flex;
   align-items: center;

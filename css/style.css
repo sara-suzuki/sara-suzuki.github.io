@@ -1111,6 +1111,45 @@ main {
   display: none;
 }
 
+.pub-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.2em 0.3em;
+  color: var(--color-text-muted);
+  border-radius: var(--radius-sm);
+  opacity: 0;
+  transition: opacity 0.2s, color 0.2s;
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  font-family: var(--font-body);
+}
+
+.publication-item:hover .pub-link-btn {
+  opacity: 1;
+}
+
+.pub-link-btn:hover {
+  color: var(--color-accent);
+}
+
+.pub-link-copied {
+  display: none;
+}
+
+.pub-link-btn.copied svg {
+  display: none;
+}
+
+.pub-link-btn.copied .pub-link-copied {
+  display: inline;
+  color: var(--color-accent);
+  font-weight: 500;
+}
+
 .publication-meta {
   display: flex;
   flex-wrap: wrap;

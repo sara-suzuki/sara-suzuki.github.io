@@ -530,7 +530,16 @@ function renderPublicationsPage() {
       <article class="publication-item" id="pub-${pub.id}" data-category="${categoryId}" data-key-work="${pub.keyWork ? 'true' : 'false'}">
         <div class="publication-year">${pub.year}</div>
         <div class="publication-content">
-          <h3>${pub.title}${pub.keyWork ? ' <span class="key-work-badge">Key Work</span>' : ''}</h3>
+          <h3>
+            ${pub.title}${pub.keyWork ? ' <span class="key-work-badge">Key Work</span>' : ''}
+            <button class="pub-link-btn" data-pub-id="pub-${pub.id}" title="Copy link to this publication" aria-label="Copy link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+              </svg>
+              <span class="pub-link-copied">Copied!</span>
+            </button>
+          </h3>
           <div class="publication-meta">
             <span class="publication-type">${pub.type}</span>
             <span class="publication-publisher">${pub.publisher}</span>
@@ -572,6 +581,19 @@ function renderPublicationsPage() {
   
   // Update count text
   updatePublicationCount('all');
+
+  // Copy-link buttons
+  list.addEventListener('click', e => {
+    const btn = e.target.closest('.pub-link-btn');
+    if (!btn) return;
+    const id = btn.dataset.pubId;
+    const url = `${window.location.origin}${window.location.pathname}#${id}`;
+    history.replaceState(null, '', `#${id}`);
+    navigator.clipboard.writeText(url).then(() => {
+      btn.classList.add('copied');
+      setTimeout(() => btn.classList.remove('copied'), 2000);
+    });
+  });
 }
 
 function handlePublicationFilter(filter) {

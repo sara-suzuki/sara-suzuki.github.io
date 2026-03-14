@@ -14,7 +14,6 @@ const CONFIG = {
     linkedin: "https://www.linkedin.com/in/sarasuzuki/",
     instagram: "https://www.instagram.com/sarasuzukiresearch/",
     bluesky: "https://bsky.app/profile/sara-suzuki.com",
-    location: "Somerville, MA",
   },
 
   // ----- NAVIGATION -----

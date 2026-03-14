@@ -243,8 +243,19 @@ const CONFIG = {
     { id: "dissertation", label: "Dissertation" }
   ],
   publications: [
-    // 2025
-
+    // 2026
+        {
+      id: "political-home-2026",
+      title: "Building Political Homes for Youth",
+      type: "Report",
+      year: "2026",
+      publisher: "CIRCLE",
+      authors: "Sara Suzuki, Seona Maskara, Ruby Belle Booth, Alberto Medina, Sarah Burnham, Eva Kroh",
+      description: "Five key elements for organizations that want to support young people’s democratic belonging and civic engagement.",
+      link: "https://circle.tufts.edu/latest-research/building-political-homes-youth",
+      downloadFile: "",
+      keyWork: true
+    },
         {
       id: "ripe-organizing-alabama-2025",
       title: "“Ripe For Organizing”: Youth Civic Engagement Lessons from Alabama",

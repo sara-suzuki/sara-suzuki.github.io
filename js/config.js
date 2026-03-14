@@ -11,7 +11,8 @@ const CONFIG = {
   // ----- CONTACT INFO -----
   contact: {
     email: "sara.suzuki@tufts.edu",
-    linkedin: "https://www.linkedin.com/in/sarasuzuki/", 
+    linkedin: "https://www.linkedin.com/in/sarasuzuki/",
+    instagram: "https://www.instagram.com/sarasuzukiresearch/",
     bluesky: "https://bsky.app/profile/sara-suzuki.com",
     location: "Somerville, MA",
   },

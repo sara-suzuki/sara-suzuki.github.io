@@ -156,6 +156,7 @@ function renderContactInfo() {
   const icons = {
     email: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>',
     linkedin: '<img src="images/linkedin.svg" alt="LinkedIn" class="contact-icon-img">',
+    instagram: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>',
     twitter: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>',
     bluesky: '<img src="images/bluesky.svg" alt="Bluesky" class="contact-icon-img">',
     location: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>'
@@ -171,13 +172,9 @@ function renderContactInfo() {
     
     if (key === 'email') {
       linkHtml = `<a href="mailto:${value}" class="contact-link">${value}</a>`;
-    } else if (key === 'linkedin' || key === 'twitter' || key === 'bluesky') {
-      let label = key.charAt(0).toUpperCase() + key.slice(1);
-      if (key === 'linkedin') {
-        label = 'LinkedIn';
-      } else if (key === 'bluesky') {
-        label = 'Bluesky';
-      }
+    } else if (key === 'linkedin' || key === 'instagram' || key === 'twitter' || key === 'bluesky') {
+      const labels = { linkedin: 'LinkedIn', instagram: 'Instagram', twitter: 'Twitter', bluesky: 'Bluesky' };
+      const label = labels[key] || key.charAt(0).toUpperCase() + key.slice(1);
       linkHtml = `<a href="${value}" class="contact-link" target="_blank" rel="noopener">${label}</a>`;
     } else if (key === 'location') {
       linkHtml = `<span class="contact-link">${value}</span>`;

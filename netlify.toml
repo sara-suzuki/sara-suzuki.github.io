@@ -1,3 +1,8 @@
 [build]
-  command = "cd blog && npm ci && npm run build && cd .. && cp -r blog/dist/* ."
+  command = "cd blog && npm ci && npm run build"
   publish = "."
+
+[[redirects]]
+  from = "/blog/*"
+  to = "/blog/dist/blog/:splat"
+  status = 200

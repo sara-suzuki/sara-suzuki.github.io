@@ -1,0 +1,89 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Research updates and reflections by Sara Suzuki, Ph.D.' } = Astro.props;
+
+const navLinks = [
+  { name: 'About',        href: '/' },
+  { name: 'Pillars',      href: '/pillars.html' },
+  { name: 'Projects',     href: '/projects.html' },
+  { name: 'Publications', href: '/publications.html' },
+  { name: 'Speaking',     href: '/speaking.html' },
+  { name: 'Press',        href: '/press.html' },
+  { name: 'Blog',         href: '/blog/' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RETQ2MQL6Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RETQ2MQL6Z');
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/blog/styles/blog.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="site-logo">
+        <span class="site-logo-text">Sara Suzuki</span>
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="this.closest('header').querySelector('.main-nav').classList.toggle('open')">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="main-nav">
+        {navLinks.map(link => (
+          <a
+            href={link.href}
+            class={`nav-link${currentPath.startsWith('/blog') && link.name === 'Blog' ? ' active' : ''}`}
+          >
+            {link.name}
+          </a>
+        ))}
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <slot />
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-message">Building a more just democracy through co-creating knowledge and power with young people.</p>
+      <p class="footer-copyright">© 2024-2026 Sara Suzuki. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -25,6 +25,7 @@ const CONFIG = {
     { name: "Publications", href: "publications.html", enabled: true },
     { name: "Speaking", href: "speaking.html", enabled: true },
     { name: "Press", href: "press.html", enabled: true },
+    { name: "Blog", href: "/blog/", enabled: true },
   ],
 
   // ----- ABOUT PAGE -----

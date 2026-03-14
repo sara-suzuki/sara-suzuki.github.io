@@ -1,0 +1,3 @@
+[build]
+  command = "cd blog && npm ci && npm run build && cd .. && cp -r blog/dist/* ."
+  publish = "."

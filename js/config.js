@@ -5,7 +5,7 @@
 
 const CONFIG = {
   // ----- PERSONAL INFO -----
-  name: "Sara Suzuki, Ph.D.",
+  name: "Sara Suzuki",
   title: "(she/her/hers)",
   
   // ----- CONTACT INFO -----

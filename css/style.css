@@ -1919,3 +1919,8 @@ img[src*="about"] {
 .instagram-follow:hover {
   text-decoration: underline;
 }
+
+[data-behold-id] img {
+  aspect-ratio: 5 / 4;
+  object-fit: cover;
+}

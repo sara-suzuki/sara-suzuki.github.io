@@ -245,6 +245,39 @@ const CONFIG = {
   publications: [
     // 2026
         {
+      id: "youth-registration-july-2026",
+      title: "There Are More Youth Registered to Vote As Of July 2026 than in the Last Midterm Election",
+      type: "Web Article",
+      year: "2026",
+      publisher: "CIRCLE",
+      authors: "Alberto Medina, Yanlin Ren, Sara Suzuki, Sam Searles",
+      description: "Youth voter registration is up 1% nationally over 2022, but with sharp disparities by race and ethnicity.",
+      link: "https://circle.tufts.edu/latest-research/more-youth-registered-vote-july-2026-last-midterm-election",
+      downloadFile: ""
+    },
+        {
+      id: "civic-engagement-health-2026",
+      title: "Patterns in Civic Engagement and Health Among Diverse Adolescent Students",
+      type: "Journal Article",
+      year: "2026",
+      publisher: "Health Promotion Practice",
+      authors: "Parissa J. Ballard, Sara Suzuki, Erin Manalo-Pedro, Alison K. Cohen",
+      description: "How civic behaviors, attitudes, and skills relate to adolescent health and well-being, and how those associations differ across race-gender subgroups.",
+      link: "https://doi.org/10.1177/15248399261443235",
+      downloadFile: "files/publications/2026_hpp.pdf"
+    },
+        {
+      id: "voter-registration-restrictions-2026",
+      title: "Update: Proposed Restrictions on Voter Registration Are Likely to Harm Young Voters",
+      type: "Web Article",
+      year: "2026",
+      publisher: "CIRCLE",
+      authors: "Ruby Belle Booth, Sara Suzuki, Alberto Medina, Sam Searles",
+      description: "How proof-of-citizenship requirements and the rollback of online and automatic registration would disproportionately burden young voters of color and low-income youth.",
+      link: "https://circle.tufts.edu/latest-research/new-restrictions-voter-registration-are-likely-harm-young-voters",
+      downloadFile: ""
+    },
+        {
       id: "political-home-2026",
       title: "Building Political Homes for Youth",
       type: "Report",
@@ -890,6 +923,22 @@ const CONFIG = {
 
   // ----- PRESS PAGE -----
   press: [
+    {
+      id: "csmonitor",
+      outlet: "The Christian Science Monitor",
+      title: "In the US, civic participation is changing. What does that mean for communities?",
+      date: "August 10, 2026",
+      type: "Feature",
+      link: "https://www.csmonitor.com/USA/Society/2026/0810/america-volunteer-church-community"
+    },
+    {
+      id: "the-74",
+      outlet: "The 74",
+      title: "Gen Z Has a Complex Relationship with Democracy, Survey Reveals",
+      date: "April 22, 2025",
+      type: "Feature",
+      link: "https://www.the74million.org/article/gen-z-has-a-complex-relationship-with-democracy-survey-reveals/"
+    },
     {
       id: "pittsburgh-post-gazette",
       outlet: "Pittsburgh Post-Gazette",

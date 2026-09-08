@@ -21,7 +21,7 @@ const CONFIG = {
   navigation: [
     { name: "About", href: "index.html", enabled: true },
     { name: "Pillars", href: "pillars.html", enabled: true },
-    { name: "Projects", href: "projects.html", enabled: true },
+    { name: "Projects", href: "projects.html", enabled: false }, // temporarily hidden
     { name: "Publications", href: "publications.html", enabled: true },
     { name: "Speaking", href: "speaking.html", enabled: true },
     { name: "Press", href: "press.html", enabled: true },

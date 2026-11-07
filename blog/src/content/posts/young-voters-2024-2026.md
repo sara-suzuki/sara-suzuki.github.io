@@ -1,7 +1,7 @@
 ---
 title: "Flow of young voters between 2024 and 2026: Sankey diagrams from NORC's Civic Health & Elections Project"
 date: 2026-11-07
-description: "How young people's votes moved between the 2024 presidential election and the 2026 midterms, and how much more they moved than older voters' did."
+description: "Between 2024 and 2026, young people moved in and out of the electorate far more than they switched parties."
 draft: false
 ---
 

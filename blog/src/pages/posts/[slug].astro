@@ -12,10 +12,16 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await post.render();
+const { comments } = post.data;
 
 function formatDate(date: Date) {
   // Frontmatter dates parse as UTC midnight; format in UTC so they don't shift a day earlier
   return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+}
+
+// A blank line in a comment starts a new paragraph
+function paragraphs(text: string) {
+  return text.trim().split(/\n\s*\n/);
 }
 ---
 
@@ -31,5 +37,95 @@ function formatDate(date: Date) {
 
       <Content />
     </article>
+
+    <section class="comments" id="comments" aria-labelledby="comments-heading">
+      <h2 id="comments-heading">Comments</h2>
+
+      {comments.length > 0 && (
+        <ol class="comment-list">
+          {comments.map(comment => (
+            <li class="comment">
+              <p class="comment-meta">
+                <span class="comment-author">{comment.name}</span>
+                <span aria-hidden="true"> · </span>
+                <time datetime={comment.date.toISOString().slice(0, 10)}>{formatDate(comment.date)}</time>
+              </p>
+              {paragraphs(comment.text).map(p => <p>{p}</p>)}
+            </li>
+          ))}
+        </ol>
+      )}
+
+      <!-- Netlify Forms picks this form up at deploy time; submissions land in
+           the Netlify dashboard and appear here only once copied into the
+           post's frontmatter. bot-field is a honeypot for spam bots. -->
+      <form
+        class="comment-form"
+        name="blog-comments"
+        method="POST"
+        action="/blog/comment-received/"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+      >
+        <input type="hidden" name="form-name" value="blog-comments" />
+        <input type="hidden" name="post" value={post.slug} />
+        <p class="comment-honeypot">
+          <label>Leave this field empty: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+        </p>
+
+        <p class="comment-form-note">
+          Comments are reviewed before they appear here. Your email address is optional and will not be published.
+        </p>
+
+        <div>
+          <label for="comment-name">Name</label>
+          <input id="comment-name" name="name" type="text" required maxlength="100" autocomplete="name" />
+        </div>
+
+        <div>
+          <label for="comment-email">Email <span class="optional">(optional, not published)</span></label>
+          <input id="comment-email" name="email" type="email" maxlength="200" autocomplete="email" />
+        </div>
+
+        <div>
+          <label for="comment-text">Comment</label>
+          <textarea id="comment-text" name="comment" required maxlength="3000" rows="6"></textarea>
+        </div>
+
+        <p class="comment-form-note">
+          By submitting, you agree that your name and comment may be published on this page.
+        </p>
+
+        <button type="submit">Submit comment</button>
+        <p class="comment-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
   </div>
 </BaseLayout>
+
+<script>
+  // Submit in the background so readers stay on the post. Without
+  // JavaScript, the form posts normally and lands on /blog/comment-received/.
+  const form = document.querySelector<HTMLFormElement>('.comment-form');
+  form?.addEventListener('submit', async event => {
+    event.preventDefault();
+    const button = form.querySelector('button')!;
+    const status = form.querySelector('.comment-status')!;
+    button.disabled = true;
+    status.textContent = 'Sending…';
+    try {
+      const body = new URLSearchParams(new FormData(form) as unknown as Record<string, string>).toString();
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body,
+      });
+      if (!response.ok) throw new Error(String(response.status));
+      form.reset();
+      status.textContent = 'Thank you! Your comment will appear here once it has been reviewed.';
+    } catch {
+      status.textContent = 'Something went wrong, and your comment was not sent. Please try again.';
+    }
+    button.disabled = false;
+  });
+</script>

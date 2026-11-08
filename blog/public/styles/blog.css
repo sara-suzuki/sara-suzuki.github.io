@@ -338,6 +338,99 @@ main {
   color: var(--color-text-muted);
 }
 
+/* ----- COMMENTS ----- */
+.comments {
+  max-width: 720px;
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-border);
+}
+
+.comments h2 { margin-bottom: var(--space-md); }
+
+.comment-list {
+  list-style: none;
+  margin-bottom: var(--space-lg);
+}
+
+.comment {
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.comment:first-child { padding-top: 0; }
+
+.comment p { line-height: 1.7; margin-bottom: var(--space-xs); }
+
+.comment .comment-meta {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+}
+
+.comment-author { font-weight: 600; color: var(--color-text); }
+
+.comment-form {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.comment-form-note {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+}
+
+.comment-form label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.comment-form .optional {
+  font-weight: 400;
+  color: var(--color-text-light);
+}
+
+.comment-form input,
+.comment-form textarea {
+  width: 100%;
+  font: inherit;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--color-border-dark);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-card);
+  color: var(--color-text);
+}
+
+.comment-form textarea { resize: vertical; }
+
+.comment-form input:focus,
+.comment-form textarea:focus {
+  outline: 2px solid var(--color-primary-light);
+  outline-offset: 1px;
+  border-color: var(--color-primary);
+}
+
+.comment-form button {
+  justify-self: start;
+  font: inherit;
+  font-weight: 600;
+  padding: 0.6rem 1.25rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: var(--color-primary);
+  color: #fff;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.comment-form button:hover { background: var(--color-primary-dark); }
+.comment-form button:disabled { opacity: 0.6; cursor: default; }
+
+.comment-status { color: var(--color-primary); }
+
+/* Spam-bot trap: real readers never see this field */
+.comment-honeypot { display: none; }
+
 /* ----- FOOTER ----- */
 .site-footer {
   background: var(--color-primary-dark);

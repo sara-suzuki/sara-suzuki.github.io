@@ -1,0 +1,15 @@
+---
+// Where the comment form lands when a reader's browser does not run
+// JavaScript (with JavaScript, the thank-you shows on the post itself).
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Comment received | Sara Suzuki">
+  <div class="container">
+    <header class="page-header">
+      <h1>Thank you for your comment</h1>
+      <p class="page-subtitle">It will appear on the post once it has been reviewed.</p>
+    </header>
+    <a href="/blog/" class="back-link">Back to the blog</a>
+  </div>
+</BaseLayout>

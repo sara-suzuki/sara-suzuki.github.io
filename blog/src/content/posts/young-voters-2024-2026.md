@@ -3,6 +3,13 @@ title: "Flow of young voters between 2024 and 2026: Sankey diagrams from NORC's 
 date: 2026-11-07
 description: "Between 2024 and 2026, young people moved in and out of the electorate far more than they switched parties."
 draft: false
+comments:
+  - name: "Caleb Whitehouse"
+    date: 2026-11-16
+    text: |-
+      Do you have a similar graph for ALL voters?
+
+      Thanks,
 ---
 
 The youth vote mattered in 2026. CIRCLE's [analysis of the 2026 election](https://circle.tufts.edu/2026-election) shows how young people ages 18 to 29 shaped the midterms.

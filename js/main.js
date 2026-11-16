@@ -303,23 +303,23 @@ function renderSpeakingPage() {
       <div class="engagement-item">
         <div class="engagement-event">${eng.event}</div>
         ${eng.title ? `<div class="engagement-title">${eng.title}</div>` : ''}
-        <span class="engagement-type">${eng.type}</span>
-        <div class="engagement-meta">
-          <div>${eng.date}</div>
-          <div>${eng.location}</div>
-        </div>
-        ${eng.link ? `
-          <div class="engagement-actions">
-            <a href="${eng.link}" class="btn-small btn-small-primary" target="_blank" rel="noopener">
-              <svg class="btn-small-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <div class="engagement-tags">
+          <span class="engagement-type">${eng.type}</span>
+          ${eng.link ? `
+            <a href="${eng.link}" class="engagement-view" target="_blank" rel="noopener">
+              <svg class="engagement-view-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                 <polyline points="15 3 21 3 21 9"></polyline>
                 <line x1="10" y1="14" x2="21" y2="3"></line>
               </svg>
               View
             </a>
-          </div>
-        ` : ''}
+          ` : ''}
+        </div>
+        <div class="engagement-meta">
+          <div>${eng.date}</div>
+          <div>${eng.location}</div>
+        </div>
       </div>
     `).join('');
   }

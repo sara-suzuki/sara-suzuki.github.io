@@ -1250,7 +1250,8 @@ main {
   color: var(--color-text-muted);
 }
 
-.publication-actions {
+.publication-actions,
+.engagement-actions {
   display: flex;
   gap: var(--space-sm);
   margin-top: var(--space-sm);
@@ -1379,13 +1380,11 @@ main {
   color: var(--color-primary-dark);
 }
 
-.press-title a,
-.engagement-title a {
+.press-title a {
   color: inherit;
 }
 
-.press-title a:hover,
-.engagement-title a:hover {
+.press-title a:hover {
   color: var(--color-primary);
 }
 

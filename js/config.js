@@ -924,6 +924,22 @@ const CONFIG = {
   // ----- PRESS PAGE -----
   press: [
     {
+      id: "the-conversation-2026-midterms",
+      outlet: "The Conversation",
+      title: "Young people turned out in near-record numbers for the 2026 midterms, with the economy top of their minds",
+      date: "November 6, 2026",
+      type: "Article",
+      link: "https://theconversation.com/young-people-turned-out-in-near-record-numbers-for-the-2026-midterms-with-the-economy-top-of-their-minds-295947"
+    },
+    {
+      id: "sciline",
+      outlet: "SciLine",
+      title: "The many barriers young adults must overcome to vote: A research-based reporting guide",
+      date: "October 14, 2026",
+      type: "Feature",
+      link: "https://www.sciline.org/elections/youth-vote-barriers/"
+    },
+    {
       id: "csmonitor",
       outlet: "The Christian Science Monitor",
       title: "In the US, civic participation is changing. What does that mean for communities?",

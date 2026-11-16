@@ -56,6 +56,37 @@
               },
               "text": {
                 "type": "string"
+              },
+              "author": {
+                "type": "boolean",
+                "default": false
+              },
+              "replies": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "$ref": "#/definitions/posts/properties/comments/items/properties/name"
+                    },
+                    "date": {
+                      "$ref": "#/definitions/posts/properties/comments/items/properties/date"
+                    },
+                    "text": {
+                      "$ref": "#/definitions/posts/properties/comments/items/properties/text"
+                    },
+                    "author": {
+                      "$ref": "#/definitions/posts/properties/comments/items/properties/author"
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "date",
+                    "text"
+                  ],
+                  "additionalProperties": false
+                },
+                "default": []
               }
             },
             "required": [

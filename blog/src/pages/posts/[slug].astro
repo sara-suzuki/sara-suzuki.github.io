@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import CommentBody from '../../components/CommentBody.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
@@ -17,11 +18,6 @@ const { comments } = post.data;
 function formatDate(date: Date) {
   // Frontmatter dates parse as UTC midnight; format in UTC so they don't shift a day earlier
   return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
-}
-
-// A blank line in a comment starts a new paragraph
-function paragraphs(text: string) {
-  return text.trim().split(/\n\s*\n/);
 }
 ---
 
@@ -43,14 +39,26 @@ function paragraphs(text: string) {
 
       {comments.length > 0 && (
         <ol class="comment-list">
-          {comments.map(comment => (
-            <li class="comment">
-              <p class="comment-meta">
-                <span class="comment-author">{comment.name}</span>
-                <span aria-hidden="true"> · </span>
-                <time datetime={comment.date.toISOString().slice(0, 10)}>{formatDate(comment.date)}</time>
-              </p>
-              {paragraphs(comment.text).map(p => <p>{p}</p>)}
+          {comments.map((comment, i) => (
+            <li class="comment" id={`comment-${i + 1}`}>
+              <CommentBody comment={comment} />
+
+              {comment.replies.length > 0 && (
+                <ol class="comment-replies" aria-label={`Replies to ${comment.name}`}>
+                  {comment.replies.map(reply => (
+                    <li class="reply"><CommentBody comment={reply} /></li>
+                  ))}
+                </ol>
+              )}
+
+              {/* Hidden until the script below runs: replying needs JavaScript */}
+              <button
+                type="button"
+                class="comment-reply-button"
+                data-reply-to={`#${i + 1} ${comment.name} (${formatDate(comment.date)})`}
+                data-reply-name={comment.name}
+                hidden
+              >Reply</button>
             </li>
           ))}
         </ol>
@@ -69,8 +77,15 @@ function paragraphs(text: string) {
       >
         <input type="hidden" name="form-name" value="blog-comments" />
         <input type="hidden" name="post" value={post.slug} />
+        <!-- Filled in by the Reply buttons, e.g. "#1 Caleb Whitehouse (November 16, 2026)" -->
+        <input type="hidden" name="reply_to" value="" />
         <p class="comment-honeypot">
           <label>Leave this field empty: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+        </p>
+
+        <p class="comment-replying" hidden>
+          Replying to <strong class="comment-replying-name"></strong>
+          <button type="button" class="comment-reply-cancel">Cancel</button>
         </p>
 
         <p class="comment-form-note">
@@ -105,27 +120,65 @@ function paragraphs(text: string) {
 
 <script>
   // Submit in the background so readers stay on the post. Without
-  // JavaScript, the form posts normally and lands on /blog/comment-received/.
+  // JavaScript, the form posts normally and lands on /blog/comment-received/
+  // (and the Reply buttons stay hidden, so every submission is a comment).
   const form = document.querySelector<HTMLFormElement>('.comment-form');
-  form?.addEventListener('submit', async event => {
-    event.preventDefault();
-    const button = form.querySelector('button')!;
-    const status = form.querySelector('.comment-status')!;
-    button.disabled = true;
-    status.textContent = 'Sending…';
-    try {
-      const body = new URLSearchParams(new FormData(form) as unknown as Record<string, string>).toString();
-      const response = await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body,
-      });
-      if (!response.ok) throw new Error(String(response.status));
-      form.reset();
-      status.textContent = 'Thank you! Your comment will appear here once it has been reviewed.';
-    } catch {
-      status.textContent = 'Something went wrong, and your comment was not sent. Please try again.';
+  if (form) {
+    const submitButton = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
+    const status = form.querySelector<HTMLElement>('.comment-status')!;
+    const replyTo = form.querySelector<HTMLInputElement>('input[name="reply_to"]')!;
+    const replying = form.querySelector<HTMLElement>('.comment-replying')!;
+    const replyingName = form.querySelector<HTMLElement>('.comment-replying-name')!;
+    const nameField = form.querySelector<HTMLInputElement>('#comment-name')!;
+    const textField = form.querySelector<HTMLTextAreaElement>('#comment-text')!;
+    let activeReplyButton: HTMLButtonElement | null = null;
+
+    // Point the form at a comment (or back at the post, with null)
+    function setReply(button: HTMLButtonElement | null) {
+      activeReplyButton = button;
+      replyTo.value = button?.dataset.replyTo ?? '';
+      replyingName.textContent = button?.dataset.replyName ?? '';
+      replying.hidden = !button;
+      submitButton.textContent = button ? 'Submit reply' : 'Submit comment';
     }
-    button.disabled = false;
-  });
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.querySelectorAll<HTMLButtonElement>('.comment-reply-button').forEach(button => {
+      button.hidden = false;
+      button.addEventListener('click', () => {
+        setReply(button);
+        status.textContent = '';
+        form.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+        (nameField.value ? textField : nameField).focus({ preventScroll: true });
+      });
+    });
+
+    form.querySelector('.comment-reply-cancel')!.addEventListener('click', () => {
+      const button = activeReplyButton;
+      setReply(null);
+      button?.focus();
+    });
+
+    form.addEventListener('submit', async event => {
+      event.preventDefault();
+      const isReply = replyTo.value !== '';
+      submitButton.disabled = true;
+      status.textContent = 'Sending…';
+      try {
+        const body = new URLSearchParams(new FormData(form) as unknown as Record<string, string>).toString();
+        const response = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body,
+        });
+        if (!response.ok) throw new Error(String(response.status));
+        form.reset();
+        setReply(null); // reset() leaves hidden inputs alone
+        status.textContent = `Thank you! Your ${isReply ? 'reply' : 'comment'} will appear here once it has been reviewed.`;
+      } catch {
+        status.textContent = `Something went wrong, and your ${isReply ? 'reply' : 'comment'} was not sent. Please try again.`;
+      }
+      submitButton.disabled = false;
+    });
+  }
 </script>

@@ -369,6 +369,55 @@ main {
 
 .comment-author { font-weight: 600; color: var(--color-text); }
 
+/* Marks comments and replies written by Sara */
+.comment-badge {
+  margin-left: 0.4em;
+  padding: 0.1em 0.5em;
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-alt);
+  color: var(--color-primary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  vertical-align: 0.1em;
+}
+
+/* Replies sit one level in, under the comment they answer */
+.comment-replies {
+  list-style: none;
+  margin: var(--space-sm) 0 0;
+  padding-left: var(--space-md);
+  border-left: 2px solid var(--color-border);
+}
+
+.reply + .reply { margin-top: var(--space-sm); }
+
+/* Text-style buttons: "Reply" on each comment, "Cancel" in the form */
+.comment-reply-button,
+.comment-reply-cancel {
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+.comment-reply-button { margin-top: var(--space-xs); }
+
+.comment-reply-button:hover,
+.comment-reply-cancel:hover { text-decoration: underline; }
+
+.comment-replying {
+  padding: 0.6rem 0.75rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-alt);
+  font-size: 0.9375rem;
+}
+
+.comment-reply-cancel { margin-left: 0.5em; }
+
 .comment-form {
   display: grid;
   gap: var(--space-sm);
@@ -410,7 +459,7 @@ main {
   border-color: var(--color-primary);
 }
 
-.comment-form button {
+.comment-form button[type="submit"] {
   justify-self: start;
   font: inherit;
   font-weight: 600;
@@ -423,8 +472,8 @@ main {
   transition: background var(--transition-fast);
 }
 
-.comment-form button:hover { background: var(--color-primary-dark); }
-.comment-form button:disabled { opacity: 0.6; cursor: default; }
+.comment-form button[type="submit"]:hover { background: var(--color-primary-dark); }
+.comment-form button[type="submit"]:disabled { opacity: 0.6; cursor: default; }
 
 .comment-status { color: var(--color-primary); }
 

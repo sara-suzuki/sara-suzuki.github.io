@@ -235,7 +235,7 @@ const CONFIG = {
   // ----- PUBLICATIONS PAGE -----
   publicationCategories: [
     { id: "all", label: "All" },
-    { id: "key-works", label: "Key Work" },
+    { id: "key-works", label: "Key Works" },
     { id: "journal-article", label: "Journal Article" },
     { id: "report", label: "Report" },
     { id: "book-chapter", label: "Book Chapter" },

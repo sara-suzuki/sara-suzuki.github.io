@@ -1379,11 +1379,13 @@ main {
   color: var(--color-primary-dark);
 }
 
-.press-title a {
+.press-title a,
+.engagement-title a {
   color: inherit;
 }
 
-.press-title a:hover {
+.press-title a:hover,
+.engagement-title a:hover {
   color: var(--color-primary);
 }
 

@@ -1196,6 +1196,14 @@ const CONFIG = {
     ],
     pastEngagements: [
       {
+        title: "Beyond the Results: The Issues That Matter to Voters in All 50 States",
+        event: "Post-election panel hosted by NORC at the University of Chicago's Civic Health & Elections Project, aired on C-SPAN",
+        type: "Panel",
+        date: "November 2026",
+        location: "Washington, DC",
+        link: "https://www.c-span.org/program/public-affairs-event/2026-midterm-election-results-and-key-voting-issues/687657"
+      },
+      {
         title: "Affective polarization within youth's relationships to democracy",
         event: "Convening on affective polarization among young people hosted by the Institute for Citizens & Scholars and Civic Education Research Lab",
         type: "Presentation",

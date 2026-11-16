@@ -302,7 +302,7 @@ function renderSpeakingPage() {
     engagementsEl.innerHTML = CONFIG.speaking.pastEngagements.map(eng => `
       <div class="engagement-item">
         <div class="engagement-event">${eng.event}</div>
-        ${eng.title ? `<div class="engagement-title">${eng.title}</div>` : ''}
+        ${eng.title ? `<div class="engagement-title">${eng.link ? `<a href="${eng.link}" target="_blank" rel="noopener">${eng.title}</a>` : eng.title}</div>` : ''}
         <span class="engagement-type">${eng.type}</span>
         <div class="engagement-meta">
           <div>${eng.date}</div>

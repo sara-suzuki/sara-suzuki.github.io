@@ -924,6 +924,14 @@ const CONFIG = {
   // ----- PRESS PAGE -----
   press: [
     {
+      id: "kpbs-2026-midterms",
+      outlet: "KPBS",
+      title: "Turnout fueled historic midterm shift toward Democrats among young voters",
+      date: "November 18, 2026",
+      type: "Feature",
+      link: "https://www.kpbs.org/news/politics/2026/11/18/turnout-fueled-historic-midterm-shift-toward-democrats-among-young-voters"
+    },
+    {
       id: "the-conversation-2026-midterms",
       outlet: "The Conversation",
       title: "Young people turned out in near-record numbers for the 2026 midterms, with the economy top of their minds",
